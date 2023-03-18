@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+<!--    <external-files-path name="my_images" path="/" />-->
+<!--    <external-files-path name="external_files" path="/" />-->
+    <external-path name="external_files"  path="Android/data/com.herride.task/files/Pictures" />
+
+    <external-cache-path
+        name="cache"
+        path="camera" />
+
+
+    <!--
+        // todo put below code in manifest
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+        <meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/path" />
+        </provider>
+
+    -->
+
+</paths>
+

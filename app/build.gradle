@@ -1,0 +1,249 @@
+buildscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2/' }
+    }
+    dependencies {
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.12.10'
+//        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.12.9'
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-platform-android'
+apply plugin: 'com.google.gms.google-services'
+// Apply the Crashlytics Gradle plugin
+apply plugin: 'com.google.firebase.crashlytics'
+
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion '29.0.3'
+    defaultConfig {
+        applicationId 'com.herride.customer'
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "com.eltaher.task.CustomTestRunner"
+        android {
+            defaultConfig {
+                manifestPlaceholders = [
+                        onesignal_app_id : '6d0d3f74-34e7-4516-9576-888f00eb43be',
+                        // Project number pulled from dashboard, local value is ignored.
+                        onesignal_google_project_number: 'REMOTE'
+                ]
+            }
+        }
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+//    buildTypes {
+//        debug {
+//            debuggable true
+//        }
+//        release {
+//            debuggable false
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+//    }
+
+//    flavorDimensions "default"
+//    productFlavors {
+//        mock {
+//            dimension = 'default'
+//            applicationIdSuffix = ".mock"
+//        }
+//        prod {
+//            dimension = 'default'
+//        }
+//    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+//    productFlavors {
+//    }
+//    defaultConfig {
+//        testInstrumentationRunnerArguments clearPackageData: 'true'
+//    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        pickFirst 'META-INF/kotlinx-io.kotlin_module'
+        pickFirst 'META-INF/atomicfu.kotlin_module'
+        pickFirst 'META-INF/kotlinx-coroutines-core.kotlin_module'
+        pickFirst 'META-INF/kotlinx-coroutines-io.kotlin_module'
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == "com.android.support") {
+                if (!requested.name.startsWith("multidex")) {
+                    details.useVersion "26.+"
+                }
+            }
+        }}
+}
+repositories {
+    repositories {
+        mavenCentral()
+    }
+}
+configurations.all {
+    resolutionStrategy {
+        force "com.android.support:support-annotations:28.0.0"
+        exclude module: "support-v13"
+    }
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //kotlin
+//    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.1.60"
+    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.3.72'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    /**-------------------testing libs------------------------------------------**/
+    //UI Testing , AndroidJUnitRunner and JUnit Rules &Espresso dependencies
+    //junit 5
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.6.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
+    testImplementation 'org.junit.platform:junit-platform-runner:1.6.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'org.assertj:assertj-core:3.16.1'
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.2.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation 'androidx.test:rules:1.2.0'
+    implementation 'androidx.test.espresso:espresso-idling-resource:3.2.0'
+    implementation 'androidx.test.espresso:espresso-contrib:3.2.0'
+    implementation 'androidx.arch.core:core-testing:2.1.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.2'
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.5.0"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.5.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.4.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.0.0-alpha02"
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.0"
+    implementation "io.reactivex.rxjava2:rxkotlin:2.1.0"
+
+    //Logging
+    //implementation 'com.squareup.okhttp3:logging-interceptor:4.7.2'
+    kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.9.3'
+    implementation 'com.squareup.okhttp3:okhttp:4.7.2'
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.4.1"))
+    implementation("com.squareup.okhttp3:okhttp")              // No version!
+    implementation("com.squareup.okhttp3:okhttp-urlconnection") // No version!
+
+    // retrofit
+  //  implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+   // implementation 'com.squareup.moshi:moshi:1.9.3'
+    /**-------------------------------------------------------------**/
+
+    /**-------------------------------------------------------------**/
+    implementation 'com.android.support:support-annotations:28.0.0'
+//MultiDex
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+
+    //Glid
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+
+    //rating bar
+    implementation 'com.iarcuschin:simpleratingbar:0.1.5'
+    //implementation 'com.github.ome450901:SimpleRatingBar:LATEST_VERSION'
+
+    // Koin for Android
+    implementation "org.koin:koin-android:$koin"
+
+    //android support & recyclerview
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.3.0-alpha03'
+    implementation 'androidx.core:core-ktx:1.3.0'
+    implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //Dagger
+    implementation 'com.google.dagger:dagger:2.27'
+    kapt 'com.google.dagger:dagger-compiler:2.27'
+    implementation 'com.google.dagger:dagger-android:2.27'
+    implementation 'com.google.dagger:dagger-android-support:2.27'
+    kapt 'com.google.dagger:dagger-android-processor:2.27'
+    kaptAndroidTest 'com.google.dagger:dagger-compiler:2.27'
+
+
+    // Maps
+    implementation "com.google.android.gms:play-services-maps:17.0.0"
+    implementation "com.google.android.libraries.places:places:2.2.0"
+    implementation "com.google.android.gms:play-services-auth:17.0.0"
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    //firebase
+    implementation platform('com.google.firebase:firebase-bom:26.1.1')
+    // Declare the dependencies for the Crashlytics and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-crashlytics'
+
+    // Declare the dependency for the Firebase SDK for Google Analytics
+    implementation 'com.google.firebase:firebase-analytics:17.4.2'
+    implementation 'com.google.firebase:firebase-auth:19.3.1'
+    //implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.firebase:firebase-database:19.3.0'
+
+    implementation 'com.firebase:geofire-android:3.0.0'
+
+    //picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //MultiDex
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+//    //Mockk
+//    implementation 'io.mockk:mockk:1.10.0'
+
+    //coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.3.7'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0-alpha04'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.0-alpha04'
+
+    //navigation component
+    implementation 'androidx.navigation:navigation-fragment:2.2.2'
+    implementation 'androidx.navigation:navigation-ui:2.2.2'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
+
+    //Scalable dp
+    implementation "com.intuit.sdp:sdp-android:1.0.6"
+    implementation "com.intuit.ssp:ssp-android:1.0.6"
+
+    //circular imageview
+    implementation 'com.mikhaellopez:circularimageview:3.0.2'
+
+    //custom RatingBar
+    implementation 'com.github.ome450901:SimpleRatingBar:1.5.0'
+
+    //One signal
+    implementation 'com.onesignal:OneSignal:3.15.6'
+    // implementation 'com.onesignal:OneSignal:3.15.4'
+
+
+    implementation project(':ccp')
+}

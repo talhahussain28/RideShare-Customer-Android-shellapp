@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.newFlow.MapActivityNew">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/llToolbarHome"
+                layout="@layout/normal_toolbar"
+                android:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/appCompatEditTextLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/bg_edit_text"
+                android:drawableStart="@drawable/location"
+                android:drawablePadding="40dp"
+                android:hint="Pick Up"
+                android:padding="15dp"
+                android:textAllCaps="false"
+                android:textColorHint="#CDCFD6"
+                android:textSize="14dp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/appCompatEditTextDropOff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/bg_edit_text"
+                android:drawableStart="@drawable/drop"
+                android:drawablePadding="40dp"
+                android:hint="Drop Off"
+                android:padding="15dp"
+                android:textAllCaps="false"
+                android:textColorHint="#CDCFD6"
+                android:textSize="14dp" />
+            <!--<fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>-->
+
+
+
+
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNext"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg"
+            android:text="Next"
+            android:textAllCaps="false"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="bottom|center"
+            android:textColor="@color/white"/>
+    </FrameLayout>
+
+
+</LinearLayout>
