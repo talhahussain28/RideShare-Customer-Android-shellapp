@@ -1,0 +1,339 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    android:clickable="true"
+    tools:context="com.herride.customer.ui.home.payment_card_setting.PaymentSettingFragment">
+
+    <include layout="@layout/normal_toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/viewCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/bg_rounded_white"
+                android:visibility="gone"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/tvChangePaymentTypeLBL"
+                        style="@style/textview_12_regular_black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/viewCardBottom"
+                        android:layout_gravity="center_vertical"
+                        android:background="@android:color/transparent"
+                        android:enabled="true"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:text="Payment Methods"
+                        android:textColor="@color/blue5A0C65"
+                        android:textColorHint="@color/blue5A0C65" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/llCashView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:visibility="gone"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/_15sdp"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_15sdp"
+                            android:paddingBottom="@dimen/_15sdp">
+
+                            <ImageView
+                                android:id="@+id/imgvCashRadio"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_marginEnd="@dimen/_10ssp"
+                                android:src="@drawable/radio_selected" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/radioCash"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/imgv_Cash"
+                                    android:layout_width="@dimen/_30sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/ic_cash"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvCashSelectLBL"
+                                    style="@style/textview_12_regular_black"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/imgv_Cash"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_toEndOf="@+id/radioCash"
+                                    android:layout_weight="1"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:background="@android:color/transparent"
+                                    android:enabled="true"
+                                    android:inputType="text"
+                                    android:singleLine="true"
+                                    android:text="Cash"
+                                    android:textColor="@color/black_lite"
+                                    android:textColorHint="@color/black_lite" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llCardView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/_15sdp"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_15sdp"
+                            android:paddingBottom="@dimen/_15sdp">
+
+
+                            <ImageView
+                                android:id="@+id/imgvCardRadio"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_marginEnd="@dimen/_10ssp"
+                                android:src="@drawable/radio_unselected" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/radioCash"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/imgv_Card"
+                                    android:layout_width="@dimen/_30sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/ic_card_fill"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvCardSelectLBL"
+                                    style="@style/textview_12_regular_black"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_toRightOf="@+id/imgv_CreditCard"
+                                    android:layout_weight="1"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:background="@android:color/transparent"
+                                    android:enabled="true"
+                                    android:inputType="text"
+                                    android:singleLine="true"
+                                    android:text="Card"
+                                    android:textColor="@color/black_lite"
+                                    android:textColorHint="@color/black_lite" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/viewAddListCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/bg_rounded_white"
+                android:visibility="visible"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+                    <!--
+                                android:paddingStart="@dimen/_15sdp"
+                                android:paddingEnd="@dimen/_15sdp"-->
+                    <TextView
+                        android:id="@+id/tvSelectCardLBL"
+                        style="@style/textview_12_medium_black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/viewCardBottom"
+                        android:layout_gravity="center_vertical"
+                        android:background="@android:color/transparent"
+                        android:enabled="true"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:text="Select Card"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:textColor="@color/black"
+                        android:visibility="invisible"
+                        android:textColorHint="@color/black" />
+                    <LinearLayout
+                        android:id="@+id/llCardListView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_gravity="center"
+                            android:minHeight="@dimen/_50sdp"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/tvNoCardLBL"
+                                style="@style/textview_12_medium_black"
+                                android:layout_width="match_parent"
+                                android:layout_marginStart="@dimen/_16ssp"
+                                android:layout_marginEnd="@dimen/_16ssp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:visibility="gone"
+                                android:layout_gravity="center"
+                                android:text="Its look like you have not added any card.\n Please add card."
+                                android:textColor="@color/colorPrimary" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvCardList"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_15sdp"
+                                android:layout_marginEnd="@dimen/_15sdp"
+                                android:orientation="vertical"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                tools:itemCount="3"
+                                android:visibility="gone"
+                                tools:listitem="@layout/layout_card_list" />
+                        </FrameLayout>
+
+
+
+                        <View
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="1dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:visibility="gone"
+                            android:background="@color/blue_line" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llAddNewCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/bg_button_curv"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgv_next"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginEnd="@dimen/_2sdp"
+                            android:padding="@dimen/_5sdp"
+                            android:src="@drawable/ic_add_white_round" />
+
+                        <TextView
+                            android:id="@+id/tvOrderConfirmBTN"
+                            style="@style/textview_12_medium_black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_gravity="bottom"
+                            android:gravity="center"
+                            android:text="Add New"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <TextView
+        android:id="@+id/tvSubmitBTN"
+        style="@style/textview_14_medium_black"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_gravity="bottom|center"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:background="@drawable/bg_button_gradient"
+        android:gravity="center"
+        android:text="Done"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15ssp"
+        android:visibility="gone" />
+</LinearLayout>

@@ -1,0 +1,158 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorE9E9E9"
+    android:orientation="vertical"
+    android:clickable="true"
+    tools:context="com.herride.customer.ui.home.setting.EmergencyContactFragment">
+
+    <include
+        android:id="@+id/llToolbar"
+        layout="@layout/normal_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/_20sdp"
+        android:paddingRight="@dimen/_20sdp"
+        android:paddingTop="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:background="@drawable/bg_rounded_white_top"
+        android:orientation="vertical">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/imgUserProfile"
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_55sdp"
+            android:src="@drawable/ic_profile_place_holder"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="1dp" />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            style="@style/edittext_16_bold_colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="David"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:textColor="@color/color323232" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            style="@style/textview_12_regular_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:text="today morning to 1455 Market"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/color323232" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/_20sdp"
+        android:paddingRight="@dimen/_20sdp"
+        android:paddingTop="@dimen/_20sdp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvRateDec"
+            style="@style/edittext_16_bold_colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Excellent"
+            android:textSize="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:textColor="@color/color323232" />
+
+      <!--  <RatingBar
+            android:id="@+id/ratingBar"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:numStars="5"
+            android:padding="@dimen/_2sdp"
+            android:progressTint="@color/pinkC522C9"
+             />-->
+
+        <!--        style="?android:attr/ratingBarStyleIndicator"-->
+
+        <com.iarcuschin.simpleratingbar.SimpleRatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srb_borderColor="@color/transparent"
+            app:srb_numberOfStars="5"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            app:srb_fillColor="@color/pinkC522C9"
+            app:srb_starBackgroundColor="@color/gray"
+            app:srb_maxStarSize="@dimen/_18sdp"
+            android:visibility="gone"
+            />
+
+        <com.willy.ratingbar.ScaleRatingBar
+            android:id="@+id/ratingbarCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srb_numStars="5"
+            android:layoutDirection="ltr"
+            app:srb_starPadding="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:srb_stepSize="0.1"
+            app:srb_starHeight="@dimen/_20sdp"
+            app:srb_starWidth="@dimen/_20sdp"
+            app:srb_isIndicator="false"
+            app:srb_clickable="false"
+            app:srb_scrollable="true"
+            app:srb_clearRatingEnabled="true"
+            app:srb_drawableEmpty="@drawable/ic_car_gray"
+            app:srb_drawableFilled="@drawable/ic_car_pink"/>
+<!--
+            app:srb_starWidth="@dimen/_30sdp"
+            app:srb_starHeight="@dimen/_14sdp"-->
+
+        <EditText
+            android:id="@+id/edtReview"
+            style="@style/edittext_14_lite_white"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_round_shap_with_border"
+            android:gravity="top|start"
+            android:hint="Rite your ride experience"
+            android:maxLength="250"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:padding="@dimen/_15sdp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/color858585"
+            android:textSize="@dimen/_13ssp" />
+
+        <TextView
+            android:id="@+id/tvSubmit"
+            style="@style/edittext_16_regular_colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:paddingLeft="@dimen/_40sdp"
+            android:paddingRight="@dimen/_40sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/bg_button_gradient"
+            android:gravity="center"
+            android:text="SUBMIT"
+            android:textAllCaps="true"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+</LinearLayout>

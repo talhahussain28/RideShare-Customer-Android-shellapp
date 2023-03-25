@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_20sdp"
+    android:layout_marginEnd="@dimen/_20sdp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llVehicleMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_15sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:background="@drawable/bg_lite_rounded_gray"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivVehicle"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/car_grey"
+                android:tint="@color/black"
+                />
+
+<!--            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivVehicle"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_economy_vehicle"
+                android:tint="@color/colorPrimary_black"
+                android:tintMode="src_over"
+                app:civ_border_overlay="true" />-->
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvVehicleType"
+                    style="@style/textview_14_medium_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_12ssp"
+                    tools:text="Economy" />
+
+                <TextView
+                    android:id="@+id/tvSeatCapacity"
+                    style="@style/textview_12_regular_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_11ssp"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
+                    tools:text="1 - 4 Seats" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTripCharge"
+                    style="@style/textview_14_medium_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    tools:text="RM0" />
+
+                <ImageView
+                    android:id="@+id/ivVehicleInfo"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:padding="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:tint="@color/gray"
+                    android:visibility="invisible"
+                    android:src="@drawable/ic_info_white" />
+
+                <TextView
+                    android:id="@+id/tvEstimatedfare"
+                    style="@style/textview_12_regular_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:singleLine="true"
+                    android:text="2 - 4 min"
+                    android:textSize="@dimen/_11ssp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/tvApproxDurationLBL"
+                    style="@style/textview_14_regular_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:text="Approx Duration"
+                    android:textSize="@dimen/_11ssp" />
+
+
+                <TextView
+                    android:id="@+id/tvApproxDuration"
+                    style="@style/textview_14_regular_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_11ssp"
+                    tools:text="3.57 Min" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/tvApproxDistanceLBL"
+                    style="@style/textview_14_regular_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:text="Approx Distance"
+                    android:textSize="@dimen/_11ssp" />
+
+
+                <TextView
+                    android:id="@+id/tvApproxDistance"
+                    style="@style/textview_14_regular_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_11ssp"
+                    tools:text="3.57 Miles" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/ViewDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/colorDivider"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</LinearLayout>

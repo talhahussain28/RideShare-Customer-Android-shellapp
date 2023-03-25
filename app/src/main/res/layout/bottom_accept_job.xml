@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_accept_job"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/top_curve_white_solid"
+    android:clickable="false"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:visibility="visible"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvWeFoundYouDriverLBL"
+            style="@style/textview_14_bold_black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:gravity="center"
+            android:text="We found a driver"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tvESTArrivalTime"
+            style="@style/textview_14_regular_black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:gravity="center"
+            android:text="Driver will pick you up at 3 mins"
+            android:textColor="@color/colorPrimary" />
+
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/imgDriverProfile1"
+            android:layout_width="@dimen/_65sdp"
+            android:layout_height="@dimen/_65sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:src="@drawable/ic_profile_place_holder" />
+
+        <TextView
+            android:id="@+id/tvDriverNameHome"
+            style="@style/textview_14_bold_black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            tools:text="Cannor Chavez"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:id="@+id/llDriverContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/pink_border_transparent"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp">
+
+
+            <ImageView
+                android:id="@+id/imgPhone"
+                android:layout_width="@dimen/_13sdp"
+                android:layout_height="@dimen/_13sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_call_purple"
+                app:tint="@color/pinkC522C9" />
+
+            <TextView
+                android:id="@+id/tvDriverContactNumber"
+                style="@style/textview_14_regular_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:gravity="center"
+                tools:text="+195756846"
+                android:textColor="@color/pinkC522C9" />
+        </LinearLayout>
+
+
+<!--
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:numStars="5"
+            android:progressTint="@color/pinkC522C9"
+            android:rating="4" />-->
+
+            <com.willy.ratingbar.ScaleRatingBar
+                android:id="@+id/ratingBarAccepted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:rating="0"
+                android:layout_gravity="center"
+                app:srb_rating="0"
+                app:srb_clearRatingEnabled="true"
+                app:srb_clickable="false"
+                app:srb_starHeight="@dimen/_20sdp"
+                app:srb_starWidth="@dimen/_20sdp"
+                app:srb_drawableEmpty="@drawable/ic_car_gray"
+                app:srb_drawableFilled="@drawable/ic_car_pink"
+                app:srb_isIndicator="true"
+                app:srb_numStars="5"
+                app:srb_scrollable="true"
+                app:srb_starPadding="@dimen/_2sdp"
+                app:srb_stepSize="0.1"/>
+
+        <TextView
+            android:id="@+id/tvVehicleNumberModel"
+            style="@style/textview_12_medium_black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:gravity="center"
+            tools:text="ST37EA51 - Small Car"
+            android:textColor="@color/black" />
+    </LinearLayout>
+</LinearLayout>

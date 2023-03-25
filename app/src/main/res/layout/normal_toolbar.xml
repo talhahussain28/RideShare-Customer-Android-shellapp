@@ -1,0 +1,108 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/toolbar"
+    android:background="@color/white"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:background="@drawable/ic_header"
+        android:backgroundTint="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:id="@+id/imgIconBack"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/_4sdp"
+                        android:layout_gravity="start|center_vertical"
+                        android:src="@drawable/ic_menu"
+                        tools:ignore="ContentDescription"
+                        app:tint="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        style="@style/textview_18_bold_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:layout_toRightOf="@+id/imgIconBack"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="Dashboard"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:layout_marginEnd="@dimen/_40sdp"
+                        android:textColor="@color/black" />
+
+                    <FrameLayout
+                        android:id="@+id/frNotification"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_height="@dimen/_40sdp"
+                        android:visibility="gone"
+                        android:layout_toRightOf="@+id/tvTitle">
+
+                        <ImageView
+                            android:id="@+id/imgNotification"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/_4sdp"
+                            android:src="@drawable/ic_notifications"
+                            app:tint="@color/white"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/tvNotificationCount"
+                            style="@style/textview_12_regular_black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="@dimen/_15ssp"
+                            android:minHeight="@dimen/_15ssp"
+                            android:layout_marginTop="@dimen/_12ssp"
+                            android:layout_gravity="top"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="2dp"
+                            android:visibility="gone"
+                            android:background="@drawable/bg_circle_skyblue"
+                            android:text="0"
+                            android:textSize="@dimen/_8ssp"
+                            android:textColor="@color/black" />
+
+                    </FrameLayout>
+                </FrameLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+</LinearLayout>

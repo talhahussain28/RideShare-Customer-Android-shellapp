@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".ui.home.SupportFragment">
+    <include
+        layout="@layout/normal_toolbar"
+        android:visibility="visible" />
+
+    <ImageView
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/_65sdp"
+        android:layout_marginEnd="@dimen/_65sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:src="@drawable/ic_support_call" />
+    <TextView
+        android:id="@+id/tvNeedHelpLBL"
+        style="@style/textview_16_bold_colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:gravity="center"
+        android:text="Need Help?"
+        android:textColor="@color/color_blue" />
+    <TextView
+        android:id="@+id/tvNeedHelpMSG"
+        style="@style/textview_12_regular_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:gravity="center"
+            android:text="Our Customer Care Team Will Be In Touch With You Within 12 Hour"
+        android:textColor="@color/color_blue" />
+
+    <TextView
+        android:id="@+id/tvGetInTouchLBL"
+        style="@style/textview_12_bold_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:gravity="center"
+        android:text="GET IN TOUCH WITH US"
+        android:textColor="@color/color_blue" />
+
+
+    <ImageView
+        android:id="@+id/imgvCall"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/_65sdp"
+        android:layout_marginEnd="@dimen/_65sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:src="@drawable/ic_call_" />
+
+    <TextView
+        android:id="@+id/tvNumberLBL"
+        style="@style/textview_12_bold_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:gravity="center"
+        tools:text="+19876543210"
+        android:textColor="@color/color_blue" />
+
+    <ImageView
+        android:id="@+id/imgvEmail"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/_65sdp"
+        android:layout_marginEnd="@dimen/_65sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:src="@drawable/ic_email_" />
+
+    <TextView
+        android:id="@+id/tvEmailIdLBL"
+        style="@style/textview_12_bold_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:gravity="center"
+        tools:text="demo@gmail.com"
+        android:textColor="@color/color_blue" />
+</LinearLayout>

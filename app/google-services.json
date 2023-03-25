@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "855307865917",
+    "project_id": "justherrideshare-cc4c8",
+    "storage_bucket": "justherrideshare-cc4c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:855307865917:android:b808e981050482cfee7f54",
+        "android_client_info": {
+          "package_name": "com.herride.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "855307865917-68v1gr8blck8roj68ec4qv8l7gch6nrf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBynjfxNe423WDyHpPwzSDf8tVKqRPNvZU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "855307865917-68v1gr8blck8roj68ec4qv8l7gch6nrf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "855307865917-6ko9rhc9cm266c6a5p3v4iq8aadhmu3c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.herride.driver"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:855307865917:android:acebae438a566b71ee7f54",
+        "android_client_info": {
+          "package_name": "com.herride.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "855307865917-68v1gr8blck8roj68ec4qv8l7gch6nrf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBynjfxNe423WDyHpPwzSDf8tVKqRPNvZU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "855307865917-68v1gr8blck8roj68ec4qv8l7gch6nrf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "855307865917-6ko9rhc9cm266c6a5p3v4iq8aadhmu3c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.herride.driver"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

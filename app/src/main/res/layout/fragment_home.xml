@@ -1,0 +1,342 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:orientation="vertical"
+    tools:context="com.herride.customer.ui.home.HomeFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/llToolbarHome"
+                layout="@layout/normal_toolbar"
+                android:visibility="visible" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                   <!-- <fragment
+                        android:id="@+id/map"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>-->
+
+                    <FrameLayout
+                        android:id="@+id/flBlankLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/flHomeViews"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rlPickup"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="@dimen/_30sdp"
+                            android:layout_marginEnd="@dimen/_30sdp"
+                            android:background="@drawable/bg_rounded_white"
+                            android:orientation="horizontal">
+                            <!--android:background="@drawable/bg_rounded_whitefafa"-->
+
+                            <ImageView
+                                android:id="@+id/imgv_left_pickup"
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:padding="@dimen/_2sdp"
+                                android:src="@drawable/ic_pick_up" />
+
+                            <TextView
+                                android:id="@+id/edtpickup"
+                                style="@style/textview_12_regular_black"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="bottom"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:layout_toEndOf="@+id/imgv_left_pickup"
+                                android:background="@android:color/transparent"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:paddingTop="@dimen/_6sdp"
+                                android:paddingBottom="@dimen/_6sdp"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:text="Pickup ?"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/black" />
+
+                            <ImageView
+                                android:id="@+id/imgv_right_pickup"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:padding="@dimen/_5sdp"
+                                android:src="@drawable/ic_close"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlDropoff"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="@dimen/_30sdp"
+                            android:layout_marginTop="@dimen/_10ssp"
+                            android:layout_marginEnd="@dimen/_30sdp"
+                            android:background="@drawable/bg_rounded_white"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imgv_left_Dropoff"
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:padding="@dimen/_2sdp"
+                                android:src="@drawable/ic_drop_off" />
+
+                            <TextView
+                                android:id="@+id/edtDropoff"
+                                style="@style/textview_12_regular_black"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="bottom"
+                                android:layout_marginEnd="@dimen/_30sdp"
+                                android:layout_toEndOf="@+id/imgv_left_Dropoff"
+                                android:background="@android:color/transparent"
+                                android:ellipsize="end"
+                                android:enabled="true"
+                                android:maxLines="1"
+                                android:paddingTop="@dimen/_6sdp"
+                                android:paddingBottom="@dimen/_6sdp"
+                                android:singleLine="true"
+                                android:text="Drop off?"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/black" />
+
+                            <ImageView
+                                android:id="@+id/imgvSwipeAddress"
+                                android:layout_width="@dimen/_25sdp"
+                                android:layout_height="@dimen/_25sdp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:padding="@dimen/_4sdp"
+                                android:src="@drawable/ic_shift_add" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:id="@+id/imgvLocateMe"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_gravity="bottom|end"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_70sdp"
+                        android:src="@drawable/ic_locate_me" />
+
+
+                    <TextView
+                        android:id="@+id/tvConfirmForOrder"
+                        style="@style/textview_14_medium_black"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="bottom"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:background="@drawable/bg_button_gradient"
+                        android:gravity="center"
+                        android:text="Book Now"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white" />
+
+                </FrameLayout>
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- TODO driver waiting cotainer-->
+        <RelativeLayout
+            android:id="@+id/rlWaitingLayoutHome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black_transperent"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvSearchingDriverHomeLBL"
+                style="@style/textview_12_regular_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/imgvSearchHome"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_60sdp"
+                android:layout_marginEnd="@dimen/_60sdp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:enabled="true"
+                android:gravity="center"
+                android:inputType="textMultiLine"
+                android:text="SEARCHING FOR A DRIVER, PLEASE WAIT"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
+            <ImageView
+                android:id="@+id/imgvSearchHome"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:src="@drawable/searching_animation" />
+
+            <TextView
+                android:id="@+id/tcCancelWaitingTripHome"
+                style="@style/textview_14_medium_black"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_below="@+id/imgvSearchHome"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@drawable/bg_button_gradient"
+                android:gravity="center"
+                android:paddingStart="@dimen/_30sdp"
+                android:paddingEnd="@dimen/_30sdp"
+                android:text="Cancel"
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+        <!-- TODO menu icon cotainer-->
+        <LinearLayout
+            android:id="@+id/llMenuOpen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/_22sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@drawable/bg_rounded_white"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:visibility="gone">
+
+
+            <ImageView
+                android:id="@+id/imgMenuTwo"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_menu"
+                app:tint="@color/black" />
+
+        </LinearLayout>
+        <!-- TODO SOS button cotainer-->
+        <LinearLayout
+            android:id="@+id/llSOSHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_26sdp"
+            android:background="@drawable/bg_pink_curve"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:visibility="gone">
+
+
+            <ImageView
+                android:id="@+id/imgSOSPhoneHome"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_call_purple"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/tvSOSContactNumberHome"
+                style="@style/textview_14_regular_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:gravity="center"
+                android:text="S.O.S."
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp" />
+        </LinearLayout>
+
+        <!-- TODO driver detail layout cotainer-->
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinatorOnBoarding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:minHeight="@dimen/_400sdp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <include layout="@layout/bottom_accept_job" />
+
+            <include layout="@layout/bottom_dropoff_job" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </FrameLayout>
+</LinearLayout>

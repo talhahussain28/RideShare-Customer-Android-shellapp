@@ -1,0 +1,266 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:orientation="vertical" >
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/img_splash_small"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/llSplash"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="visible"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_65sdp"
+                    android:layout_marginEnd="@dimen/_65sdp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_app_splash_logo" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="visible"
+                android:orientation="vertical">
+
+
+
+                    <RelativeLayout
+                        android:id="@+id/llGetStarted"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:visibility="visible"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvWelcomeDriverAppLBL"
+                            style="@style/textview_16_medium_black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:layout_marginStart="@dimen/_30sdp"
+                            android:layout_marginEnd="@dimen/_30sdp"
+                            android:text="Welcome to Just \nHer Rideshare"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_20sdp" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvWelcomeDriverAppLBL"
+                            android:layout_centerHorizontal="true"
+                            android:orientation="horizontal"
+                            android:layout_marginStart="@dimen/_30sdp"
+                            android:layout_marginEnd="@dimen/_30sdp"
+                            android:layout_marginTop="@dimen/_30sdp">
+
+                            <TextView
+                                android:id="@+id/tvSignIn"
+                                style="@style/textview_12_medium_black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/bg_rounded_white"
+                                android:padding="@dimen/_15sdp"
+                                android:text="SIGN IN"
+                                android:textAllCaps="true"
+                                android:enabled="false"
+                                android:textColor="@color/colorPrimary" />
+
+                            <TextView
+                                android:id="@+id/tvSignUp"
+                                style="@style/textview_12_medium_black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_centerInParent="true"
+                                android:layout_marginStart="@dimen/_20sdp"
+                                android:layout_toEndOf="@+id/tvSignIn"
+                                android:gravity="center"
+                                android:background="@drawable/bg_border_white_back_transperent_lite_curv"
+                                android:padding="@dimen/_15sdp"
+                                android:text="SIGN UP"
+                                android:enabled="false"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white" />
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+</LinearLayout>
+
+
+
+<!--<RelativeLayout-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:background="@drawable/img_splash_small"-->
+<!--android:orientation="vertical">-->
+
+
+<!--<RelativeLayout-->
+<!--    android:id="@+id/llSplash"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:visibility="visible"-->
+<!--    android:orientation="vertical">-->
+<!--    <ImageView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="@dimen/_65sdp"-->
+<!--        android:layout_marginEnd="@dimen/_65sdp"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:src="@drawable/ic_app_splash_logo" />-->
+<!--</RelativeLayout>-->
+
+<!--<RelativeLayout-->
+<!--    android:id="@+id/llGetStarted"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:visibility="visible"-->
+<!--    android:orientation="vertical">-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imgv_splash_logo"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="@dimen/_65sdp"-->
+<!--        android:layout_marginEnd="@dimen/_65sdp"-->
+<!--        android:layout_marginTop="@dimen/_105sdp"-->
+<!--        android:visibility="invisible"-->
+<!--        android:src="@drawable/ic_app_splash_logo" />-->
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/imgv_splash_logo"-->
+<!--        android:layout_marginTop="@dimen/_60sdp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:visibility="gon"-->
+<!--            android:layout_marginTop="-10dp"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvWelcomeDriverAppLBL"-->
+<!--                style="@style/textview_16_medium_black"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_marginStart="@dimen/_30sdp"-->
+<!--                android:layout_marginEnd="@dimen/_30sdp"-->
+<!--                android:text="Welcome to the Just \nHer Rideshare"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="@dimen/_20sdp" />-->
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/tvWelcomeDriverAppLBL"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_marginStart="@dimen/_30sdp"-->
+<!--                android:layout_marginEnd="@dimen/_30sdp"-->
+<!--                android:layout_marginTop="@dimen/_30sdp">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tvSignIn"-->
+<!--                    style="@style/textview_12_medium_black"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:background="@drawable/bg_rounded_white"-->
+<!--                    android:padding="@dimen/_15sdp"-->
+<!--                    android:text="SIGN IN"-->
+<!--                    android:textAllCaps="true"-->
+<!--                    android:textColor="@color/colorPrimary" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tvSignUp"-->
+<!--                    style="@style/textview_12_medium_black"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:layout_marginStart="@dimen/_20sdp"-->
+<!--                    android:layout_toEndOf="@+id/tvSignIn"-->
+<!--                    android:gravity="center"-->
+<!--                    android:background="@drawable/bg_rounded_white_border"-->
+<!--                    android:padding="@dimen/_15sdp"-->
+<!--                    android:text="SIGN UP"-->
+<!--                    android:textAllCaps="true"-->
+<!--                    android:textColor="@color/white" />-->
+
+<!--            </LinearLayout>-->
+<!--        </RelativeLayout>-->
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/rlBottom"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:layout_marginStart="@dimen/_30sdp"-->
+<!--            android:layout_marginEnd="@dimen/_30sdp"-->
+<!--            android:background="@drawable/bg_rounded_white"-->
+<!--            android:visibility="gone"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvGetStarted"-->
+<!--                style="@style/textview_16_medium_black"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:textAllCaps="true"-->
+<!--                android:text="Get Started"-->
+<!--                android:textColor="@color/colorPrimary" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imgv_next"-->
+<!--                android:layout_width="@dimen/_50sdp"-->
+<!--                android:layout_height="@dimen/_40sdp"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:layout_marginEnd="@dimen/_5sdp"-->
+<!--                android:padding="@dimen/_5sdp"-->
+<!--                android:src="@drawable/ic_arrow_right" />-->
+
+<!--        </RelativeLayout>-->
+
+<!--    </RelativeLayout>-->
+
+
+<!--</RelativeLayout>-->
+<!--</RelativeLayout>-->

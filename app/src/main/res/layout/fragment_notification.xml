@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:clickable="true"
+    tools:context="com.herride.customer.ui.home.setting.EmergencyContactFragment">
+
+    <include
+        android:id="@+id/llToolbar"
+        layout="@layout/normal_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_top_rounded_white"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/_20sdp"
+            android:paddingRight="@dimen/_20sdp"
+            android:paddingTop="@dimen/_20sdp"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvNotificationList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="10"
+                tools:listitem="@layout/listrow_notification_list" />
+
+
+            <TextView
+                android:id="@+id/tvNoNotificationLBL"
+                style="@style/textview_12_medium_black"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/_16ssp"
+                android:layout_marginEnd="@dimen/_16ssp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:text=" It looks like notification list not available at this moment."
+                android:textColor="@color/color_pink" />
+
+
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>
