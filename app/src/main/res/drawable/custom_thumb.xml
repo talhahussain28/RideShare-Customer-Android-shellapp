@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?android:colorControlHighlight">
+    <item android:drawable="@drawable/ic_slider_thumb">
+        <shape android:shape="oval" >
+            <size
+                android:width="5dp"
+                android:height="5dp"/>
+        </shape>
+    </item>
+</ripple>
+
+<!--
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_slider_thumb" >
+        <shape android:shape="oval" >
+            <size
+                android:width="5dp"
+                android:height="5dp"/>
+        </shape>
+    </item>
+
+
+</layer-list>-->

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/llToolbarHome"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:id="@+id/imgIconBack"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/circle_background"
+                        android:padding="12dp"
+                        android:src="@drawable/arrow_back"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        style="@style/textview_title"
+                        android:text="My Trips" />
+
+
+                    <ImageView
+                        android:id="@+id/imgUserStatus"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="30dp"
+                        android:src="@drawable/ic_notification" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/view_8x"
+        android:layout_marginVertical="@dimen/view_4x"
+        android:background="@drawable/radius_background_8x"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llToolbarHome">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardUserImage"
+            android:layout_width="@dimen/view_14x"
+            android:layout_height="@dimen/view_14x"
+            android:layout_marginStart="@dimen/view_10x"
+            app:cardBackgroundColor="#EAFAFF"
+            app:cardCornerRadius="@dimen/view_8x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewUserImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/boy"
+                tools:ignore="ImageContrastCheck" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/textViewDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/view_6x"
+            android:layout_marginTop="@dimen/view_6x"
+            android:text="2/2/2022 . 3:23 pm"
+            app:layout_constraintStart_toEndOf="@id/cardUserImage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imagePickup"
+            android:layout_width="@dimen/view_3x"
+            android:layout_height="@dimen/view_3x"
+            android:layout_marginTop="@dimen/view_4x"
+            android:src="@drawable/pickup"
+            app:layout_constraintStart_toStartOf="@id/textViewDate"
+            app:layout_constraintTop_toBottomOf="@id/textViewDate" />
+
+        <View
+            android:id="@+id/viewDestination"
+            android:layout_width="1dp"
+            android:layout_height="@dimen/view_6x"
+            android:background="@color/gray"
+            app:layout_constraintEnd_toEndOf="@id/imagePickup"
+            app:layout_constraintStart_toStartOf="@id/imagePickup"
+            app:layout_constraintTop_toBottomOf="@id/imagePickup" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageDrop"
+            android:layout_width="@dimen/view_3x"
+            android:layout_height="@dimen/view_3x"
+            android:src="@drawable/pickup"
+            app:layout_constraintEnd_toEndOf="@+id/imagePickup"
+            app:layout_constraintStart_toStartOf="@+id/imagePickup"
+            app:layout_constraintTop_toBottomOf="@id/viewDestination" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/view_2x"
+            android:text="The Globe Roundabout"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/viewDestination"
+            app:layout_constraintStart_toEndOf="@+id/imageDrop"
+            app:layout_constraintTop_toTopOf="@+id/imagePickup" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/view_2x"
+            android:text="The Global Business School"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/imageDrop"
+            app:layout_constraintStart_toEndOf="@+id/imageDrop"
+            app:layout_constraintTop_toTopOf="@+id/imageDrop" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/view_6x"
+            android:layout_marginBottom="@dimen/view_6x"
+            android:background="@drawable/radius_background_green_5x"
+            android:paddingStart="@dimen/view_4x"
+            android:paddingTop="@dimen/view_2x"
+            android:paddingEnd="@dimen/view_4x"
+            android:paddingBottom="@dimen/view_2x"
+            android:text="$29.88"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/textViewDate"
+            app:layout_constraintTop_toBottomOf="@id/imageDrop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appCompatImageView3"
+            android:layout_width="@dimen/view_4x"
+            android:layout_height="@dimen/view_4x"
+            android:layout_marginStart="@dimen/view_3x"
+            android:src="@drawable/star"
+            app:layout_constraintBottom_toBottomOf="@+id/amount"
+            app:layout_constraintStart_toEndOf="@+id/amount"
+            app:layout_constraintTop_toTopOf="@+id/amount"
+            app:tint="@color/quantum_yellowA700" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/view_1x"
+            android:text="5.0"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView3"
+            app:layout_constraintStart_toEndOf="@+id/appCompatImageView3"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView3" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

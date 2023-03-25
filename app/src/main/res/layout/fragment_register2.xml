@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="48dp"
+            android:visibility="invisible"
+            android:layout_height="48dp"
+            android:layout_margin="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/circle_background"
+            android:padding="12dp"
+            android:src="@drawable/arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:text="Let's Get Started"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/backButton" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/lato_medium"
+            android:text="Sign up to your account to access valuable\n feature of our app"
+            android:textAlignment="center"
+            android:textColor="@color/gray"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="@+id/appCompatTextView"
+            app:layout_constraintStart_toStartOf="@id/appCompatTextView"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewImage"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="#58D2F8"
+            app:cardCornerRadius="100dp"
+            app:layout_constraintEnd_toEndOf="@+id/appCompatTextView2"
+            app:layout_constraintStart_toStartOf="@+id/appCompatTextView2"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView2">
+
+            <ProgressBar
+                android:id="@+id/pbLoadingEditRegister"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewBonus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:padding="10dp"
+                android:src="@drawable/boy"
+                tools:ignore="ContentName" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/cardViewImageSelection"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cardViewImage"
+            app:layout_constraintEnd_toEndOf="@+id/cardViewImage">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/textViewCounter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="3dp"
+                android:gravity="center"
+                android:minWidth="10dp"
+                android:src="@drawable/pencil"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/full_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/bg_edit_text"
+            android:drawableStart="@drawable/person"
+            android:drawablePadding="40dp"
+            android:hint="Full Name"
+            android:padding="15dp"
+            android:textAllCaps="false"
+            android:textColorHint="#CDCFD6"
+            android:textSize="14dp"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewImage" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/email_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:background="@drawable/bg_edit_text"
+            android:drawableStart="@drawable/email"
+            android:drawablePadding="40dp"
+            android:hint="Email"
+            android:padding="15dp"
+            android:textAllCaps="false"
+            android:textColorHint="#CDCFD6"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/full_name" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/password_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:background="@drawable/bg_edit_text"
+            android:drawableStart="@drawable/lock"
+            android:drawablePadding="40dp"
+            android:hint="Password"
+            android:padding="15dp"
+            android:textAllCaps="false"
+            android:textColorHint="#CDCFD6"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email_textView" />
+
+        <!--<androidx.cardview.widget.CardView
+            android:id="@+id/cardViewGender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="#FAFAFA"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="@+id/appCompatEditText3"
+            app:layout_constraintStart_toStartOf="@+id/appCompatEditText3"
+            app:layout_constraintTop_toBottomOf="@id/appCompatEditText3">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="Gender"
+                    android:textColor="#CDCFD6"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/arrow_down"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>-->
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/phone_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/bg_edit_text"
+            android:drawableStart="@drawable/phone"
+            android:drawablePadding="40dp"
+            android:hint="Your Number"
+            android:imeOptions="actionDone"
+            android:padding="15dp"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:textColorHint="#CDCFD6"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password_textView" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/phone_number"
+            app:layout_constraintStart_toStartOf="@+id/phone_number"
+            app:layout_constraintTop_toBottomOf="@+id/phone_number">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="#FAFAFA"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toStartOf="@+id/cityCardView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/phone_number">
+                <!--
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="15dp"
+                                    android:text="State"
+                                    android:textColor="#CDCFD6"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_gravity="end|center"
+                                    android:layout_marginEnd="10dp"
+                                    android:src="@drawable/arrow_down"
+                                    app:layout_constraintBottom_toBottomOf="parent" />
+                -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:id="@+id/flGender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.herride.customer.ui.widgets.NDSpinner
+                            android:id="@+id/spinnerGender"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="bottom"
+                            android:background="@android:color/transparent"
+                            android:enabled="true"
+                            android:entries="@array/genders"
+                            android:hint="State"
+                            android:maxLength="10"
+                            android:paddingTop="@dimen/_6sdp"
+                            android:paddingBottom="@dimen/_6sdp"
+                            android:singleLine="true"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/white" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_9sdp"
+                            android:layout_height="@dimen/_8sdp"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:src="@drawable/ic_drop_down"
+                            app:tint="@color/black" />
+
+                        <TextView
+                            android:id="@+id/tvGenderItem"
+                            style="@style/textview_12_medium_black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text="State"
+                            android:textColor="#CDCFD6" />
+                    </FrameLayout>
+
+                    <!--  <View
+                          android:layout_width="match_parent"
+                          android:layout_height="1dp"
+                          android:layout_marginTop="@dimen/_10sdp"
+                          android:alpha="20"
+                          android:background="@color/gray" />-->
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cityCardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="#FAFAFA"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/stateCardView"
+                app:layout_constraintTop_toBottomOf="@id/phone_number">
+
+                <!--<androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="City"
+                    android:textColor="#CDCFD6"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/arrow_down"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:id="@+id/flCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.herride.customer.ui.widgets.NDSpinner
+                            android:id="@+id/spinnerCity"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="bottom"
+                            android:background="@android:color/transparent"
+                            android:enabled="true"
+                            android:entries="@array/genders"
+                            android:hint="City"
+                            android:maxLength="10"
+                            android:paddingTop="@dimen/_6sdp"
+                            android:paddingBottom="@dimen/_6sdp"
+                            android:singleLine="true"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/white" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_9sdp"
+                            android:layout_height="@dimen/_8sdp"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:src="@drawable/ic_drop_down"
+                            app:tint="@color/black" />
+
+                        <TextView
+                            android:id="@+id/tvCityItem"
+                            style="@style/textview_12_medium_black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text="City"
+                            android:textColor="#CDCFD6" />
+                    </FrameLayout>
+
+                    <!--  <View
+                          android:layout_width="match_parent"
+                          android:layout_height="1dp"
+                          android:layout_marginTop="@dimen/_10sdp"
+                          android:alpha="20"
+                          android:background="@color/gray" />-->
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/appCompatCheckBox2"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/check_box_bg"
+            android:button="@null"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="I accept the"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatCheckBox2"
+            app:layout_constraintStart_toEndOf="@+id/appCompatCheckBox2"
+            app:layout_constraintTop_toTopOf="@+id/appCompatCheckBox2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/terms_conditions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="terms and condition"
+            android:textColor="#989FFA"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatCheckBox2"
+            app:layout_constraintStart_toEndOf="@+id/appCompatTextView3"
+            app:layout_constraintTop_toTopOf="@+id/appCompatCheckBox2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNext"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/btn_bg"
+            android:text="Next"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/terms_conditions" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            android:text="Already have an account?"
+            app:layout_constraintStart_toStartOf="@+id/btnNext"
+            app:layout_constraintTop_toBottomOf="@+id/btnNext" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:id="@+id/signInTV"
+            android:text="Sign In"
+            android:textColor="#F39054"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintStart_toEndOf="@+id/appCompatTextView5"
+            app:layout_constraintTop_toTopOf="@+id/appCompatTextView5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

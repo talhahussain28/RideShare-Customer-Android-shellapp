@@ -29,25 +29,57 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_app_icons_round"
         android:supportsRtl="true"
-        android:theme="@style/Splash"
+        android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".PaymentActivityNew"
+            android:name="com.herride.customer.ui.newFlow.TermsActivity"
             android:exported="false" />
         <activity
-            android:name=".RatingActivityNew"
+            android:name="com.herride.customer.ui.newFlow.FaqActivityNew"
             android:exported="false" />
         <activity
-            android:name=".TripActivityNew"
+            android:name="com.herride.customer.ui.newFlow.SettingNewActivity"
+            android:exported="false" />
+        <!--
+        <activity
+            android:name="com.herride.customer.ui.newFlow.SplashActivityNew"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        -->
+        <activity
+            android:name="com.herride.customer.ui.newFlow.NavigationActivity"
             android:exported="false" />
         <activity
-            android:name=".PreferenceActivity"
+            android:name="com.herride.customer.ui.newFlow.SupportActivityNew"
             android:exported="false" />
         <activity
-            android:name=".MapActivityNew"
+            android:name="com.herride.customer.ui.newFlow.PaymentActivityNew"
             android:exported="false" />
         <activity
-            android:name=".LoginActivityNew"
+            android:name="com.herride.customer.ui.newFlow.RatingActivityNew"
+            android:exported="false" />
+        <activity
+            android:name="com.herride.customer.ui.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.herride.customer.ui.newFlow.TripActivityNew"
+            android:exported="false" />
+        <activity
+            android:name="com.herride.customer.ui.newFlow.PreferenceActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.herride.customer.ui.newFlow.MapActivityNew"
+            android:exported="false" />
+        <activity
+            android:name="com.herride.customer.ui.newFlow.LoginActivityNew"
+            android:exported="false" />
+        <activity
+            android:name="com.herride.customer.ui.newFlow.SignupActivityNew"
             android:exported="false" />
         <!--
 <activity
@@ -56,7 +88,7 @@
         -->
         <!-- <activity android:name="com.justherrideshare.customer.ui.LoginActivity" android:screenOrientation="portrait"></activity> -->
         <activity
-            android:name=".SignupActivityNew"
+            android:name="com.herride.customer.ui.newFlow.SplashActivityNew"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -64,10 +96,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
+        <!--
+<activity
             android:name="com.herride.customer.ui.SplashActivity"
             android:screenOrientation="portrait" />
-
+        -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"

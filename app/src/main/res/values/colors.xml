@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3DAAF7</color>
+    <color name="colorPrimaryDark">#3DAAF7</color>
+    <color name="colorAccent">#3DAAF7</color>
+    <color name="color_blue">#3DAAF7</color>
+
+
+    <color name="button_color">#3DAAF7</color>
+
+    <color name="transparent">#00FFFFFF</color>
+    <color name="sky_blue">#FBBBFD</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="whiteFAFAFA">#E1FFFFFF</color>
+    <color name="whiteF2FFFFFF">#F2FFFFFF</color>
+    <color name="whiteEAEAEA">#EAEAEA</color>
+    <color name="white_lite_cream">#F6F6F6</color>
+    <color name="white_litest">#60F6F6F6</color>
+
+    <color name="blue5A0C65">#5A0C65</color>
+    <color name="colorCB23CF">#CB23CF</color>
+    <color name="colorCC23CF">#CC23CF</color>
+    <color name="blue_line">#712E7B</color>
+
+    <color name="start_color5a0c65">#5a0c65</color>
+    <color name="end_colorcc23cf">#cc23cf</color>
+    <color name="order_now_color">#CB23CE</color>
+
+    <color name="color_pink">#cc23cf</color>
+
+    <color name="driver_detail_color_2">#5a0c65</color>
+    <color name="driver_detail_color">#cc23cf</color>
+    <color name="driver_detail_card_shadow_color">#E3CEE4</color>
+
+    <color name="black">#000000</color>
+    <color name="color0C0C0C">#0C0C0C</color>
+    <color name="color858585">#858585</color>
+    <color name="color2D2626">#2D2626</color>
+    <color name="colorBDBDBD">#BDBDBD</color>
+    <color name="color585858">#585858</color>
+    <color name="colorADABAB">#ADABAB</color>
+    <color name="black_lite">#3B3B3B</color>
+    <color name="black_transperent">#B93B3B3B</color>
+    <color name="grey999999">#999999</color>
+    <color name="pinkC522C9">#C522C9</color>
+    <color name="green">#3BB54A</color>
+
+    <color name="colorDivider">#D6D6D6</color>
+    <color name="gray_card_background">#F3F3F3</color>
+    <color name="gray_card_border">#8F8F8F</color>
+    <color name="gray_vehicle_layour">#E9E6E9</color>
+    <color name="gray_DAD8DA">#DAD8DA</color>
+    <color name="gray_F1EFF1">#F1EFF1</color>
+
+    <color name="grayText">#ACB1C0</color>
+    <color name="gray_text_dark">#636363</color>
+    <color name="gray_text_search_driver">#D2D2D2</color>
+
+    <color name="background_color">#E9E9E9</color>
+
+    <color name="color203EC8BC">#333EC8BC</color>
+    <color name="color76877E">#76877E</color>
+    <color name="colorF0F2F6">#F0F2F6</color>
+    <color name="color40A7B7">#40A7B7</color>
+    <color name="colorFBF9F7">#FBF9F7</color>
+    <color name="colorDF2E21">#DF2E21</color>
+    <color name="color212A37">#212A37</color>
+    <color name="color979797">#979797</color>
+    <color name="color237B987">#237B98</color>
+    <color name="color3A3F52">#3A3F52</color>
+    <color name="coloropicity3A3F52">#333A3F52</color>
+    <color name="color3EC8BC">#3EC8BC</color>
+    <color name="colorE5E5E5">#E5E5E5</color>
+    <color name="color252837">#252837</color>
+    <color name="colorFE9C5E">#FE9C5E</color>
+    <color name="colorC5F5FC">#C5F5FC</color>
+    <color name="color8F92A1">#8F92A1</color>
+    <color name="color313131">#313131</color>
+    <color name="color33252525">#33252525</color>
+    <color name="color060518">#060518</color>
+    <color name="color323232">#323232</color>
+    <color name="color33FE9C5E">#33FE9C5E</color>
+    <color name="colorDotInActive">#975E5E5E</color>
+
+    <color name="colorDarkGray">#992E313C</color>
+    <color name="colorAAAAAA">#AAAAAA</color>
+
+    <color name="colorFF2E313C">#FF2E313C</color>
+
+    <color name="colorE9E6E9">#E9E6E9</color>
+    <color name="colorE9E9E9">#E9E9E9</color>
+    <color name="liteGray">#CCCBCB</color>
+    <color name="Darkest_green">#09703e</color>
+    <color name="red">#D13535</color>
+
+    <color name="gray_tex">#828181</color>
+    <color name="gray_op64">#A3828181</color>
+
+    <color name="gray">#c4c4c4</color>
+    <color name="custom_gray">#D0D0D5</color>
+    <color name="cute_purple">#CC9FFE</color>
+    <color name="orange">#F57D11</color>
+
+
+</resources>

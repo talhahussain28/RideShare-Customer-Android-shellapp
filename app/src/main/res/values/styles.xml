@@ -1,0 +1,326 @@
+<resources>
+
+    <style name="Splash" parent="@style/Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowActionBar">false</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="ActionBarAppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Title_Style" parent="Base.TextAppearance.AppCompat.Large">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="customRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ic_car_gray</item>
+        <item name="android:indeterminateDrawable">@drawable/ic_car_pink</item>
+        <item name="android:numStars">5</item>
+        <item name="android:drawablePadding">2dp</item>
+    </style>
+
+
+    <style name="MaterialDialogSheet" parent="@android:style/Theme.Dialog">
+
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="behavior_peekHeight">@dimen/_150sdp</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
+        <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+    </style>
+
+    <style name="DialogMessageAnimation">
+        <item name="android:windowEnterAnimation">@anim/down_from_top</item>
+        <item name="android:windowExitAnimation">@anim/slide_up_current</item>
+    </style>
+    <style name="blackGTRegularNormal">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <!--Todo TabLayout-->
+    <style name="CustomTextAppearanceTab" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- ///////////////////////// todo Textview style ///////////////////////// -->
+
+    <style name="textview_12_bold_black">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="textview_12_medium_black">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="fontFamily">@font/lato_medium</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="textview_12_regular_black">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="textview_12_lite_black">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="fontFamily">@font/lato_lite</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <style name="textview_14_bold_black">
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="textview_14_medium_black">
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="fontFamily">@font/lato_medium</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="textview_14_regular_black">
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="textview_14_lite_black">
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="fontFamily">@font/lato_lite</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="textview_16_bold_colorPrimary">
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="textview_16_medium_black">
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="fontFamily">@font/lato_medium</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="textview_16_regular_colorPrimary">
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="textview_16_lite_colorPrimary">
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="fontFamily">@font/lato_lite</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+
+    <style name="textview_18_bold_black">
+        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="textview_18_medium_black">
+        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="fontFamily">@font/lato_medium</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="textview_18_regular_black">
+        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="textview_18_lite_black">
+        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="fontFamily">@font/lato_lite</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+
+    <!-- ///////////////////////// todo EditText style ///////////////////////// -->
+
+
+    <style name="edittext_12_bold_black">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="hintTextColor">@color/white</item>
+    </style>
+
+    <style name="edittext_12_medium_black">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="fontFamily">@font/lato_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="hintTextColor">@color/white</item>
+    </style>
+
+    <style name="edittext_12_regular_black">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="hintTextColor">@color/white</item>
+    </style>
+
+    <style name="edittext_12_lite_black">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="fontFamily">@font/lato_lite</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="hintTextColor">@color/white</item>
+    </style>
+
+
+    <style name="edittext_14_bold_white">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="hintTextColor">@color/black</item>
+    </style>
+
+    <style name="edittext_14_medium_white">
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="fontFamily">@font/lato_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="hintTextColor">@color/white</item>
+    </style>
+
+    <style name="edittext_14_regular_white">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="hintTextColor">@color/black</item>
+    </style>
+
+    <style name="edittext_14_lite_white">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="fontFamily">@font/lato_lite</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="hintTextColor">@color/black</item>
+    </style>
+
+    <style name="edittext_16_bold_colorPrimary">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="hintTextColor">@color/white</item>
+    </style>
+
+    <style name="edittext_16_medium_black">
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="fontFamily">@font/lato_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="hintTextColor">@color/white</item>
+    </style>
+
+    <style name="edittext_16_regular_colorPrimary">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="hintTextColor">@color/white</item>
+    </style>
+
+    <style name="edittext_16_lite_colorPrimary">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="fontFamily">@font/lato_lite</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="hintTextColor">@color/white</item>
+    </style>
+
+
+    <style name="edittext_18_bold_colorPrimary">
+        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="hintTextColor">@color/white</item>
+    </style>
+
+    <style name="edittext_18_medium_black">
+        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="fontFamily">@font/lato_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="hintTextColor">@color/white</item>
+    </style>
+
+    <style name="edittext_18_regular_colorPrimary">
+        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="hintTextColor">@color/white</item>
+    </style>
+
+    <style name="edittext_18_lite_colorPrimary">
+        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="fontFamily">@font/lato_lite</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="hintTextColor">@color/white</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/gray</item>
+        <item name="colorControlActivated">#FFFF00</item>
+    </style>
+
+    <style name="MyBottSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <!--<item name="android:windowCloseOnTouchOutside">false</item>-->
+
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.3</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+
+    <style name="textview_title">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <!-- ///////////////////////// todo Button style ///////////////////////// -->
+
+</resources>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.newFlow.SupportActivityNew">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/llToolbarHome"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:id="@+id/imgIconBack"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/circle_background"
+                        android:padding="12dp"
+                        android:src="@drawable/arrow_back"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        style="@style/textview_title"
+                        android:text="Support" />
+
+
+                    <ImageView
+                        android:id="@+id/imgUserStatus"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="30dp"
+                        android:src="@drawable/ic_notification" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/support"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/lato_medium"
+        android:layout_gravity="center"
+        android:text="We are here to help so please get in\n touch with us."
+        android:textAlignment="center"
+        android:textColor="@color/gray"
+        android:layout_marginBottom="20dp"
+        android:textSize="17sp" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/call"
+                android:layout_marginStart="30dp"
+                android:src="@drawable/support_phone"
+                app:layout_constraintBottom_toBottomOf="@+id/appCompatTextViewNo"
+                app:layout_constraintTop_toTopOf="@+id/appCompatTextViewPhone"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appCompatTextViewPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_medium"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center"
+                android:text="Phone Number"
+                android:textAlignment="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/call"
+                android:textColor="@color/gray"
+                android:textSize="12sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appCompatTextViewNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_medium"
+                android:layout_marginStart="20dp"
+                android:layout_gravity="center"
+                android:text="+1 (800) 318 4526"
+                android:layout_marginTop="3dp"
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatTextViewPhone"
+                app:layout_constraintStart_toEndOf="@+id/call"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/view"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@color/gray"
+                app:layout_constraintTop_toBottomOf="@id/appCompatTextViewNo"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/mail"
+                android:layout_marginStart="30dp"
+                android:src="@drawable/email_support"
+                app:layout_constraintBottom_toBottomOf="@+id/appCompatTextViewMailNo"
+                app:layout_constraintTop_toTopOf="@+id/appCompatTextViewMail"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appCompatTextViewMail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_medium"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:text="Email Address"
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@+id/view"
+                app:layout_constraintStart_toEndOf="@+id/mail"
+                android:textColor="@color/gray"
+                android:textSize="12sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appCompatTextViewMailNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_medium"
+                android:layout_marginStart="20dp"
+                android:layout_gravity="center"
+                android:text="info@justtherideshare.com"
+                android:layout_marginTop="3dp"
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatTextViewMail"
+                app:layout_constraintStart_toEndOf="@+id/mail"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="invisible"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatTextViewMailNo"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

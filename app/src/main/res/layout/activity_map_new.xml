@@ -14,58 +14,151 @@
         android:layout_height="match_parent">
 
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/llToolbarHome"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:titleTextColor="@android:color/white">
 
-            <include
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="30dp"
+                            android:orientation="horizontal"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:id="@+id/imgIconBack"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="@drawable/circle_background"
+                                android:padding="12dp"
+                                android:src="@drawable/arrow_back"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:id="@+id/tvTitle"
+                                style="@style/textview_title"
+                                android:text="Map" />
+
+
+                            <ImageView
+                                android:id="@+id/imgUserStatus"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:layout_marginEnd="30dp"
+                                android:src="@drawable/ic_notification" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+        <!--    <include
                 android:id="@+id/llToolbarHome"
                 layout="@layout/normal_toolbar"
-                android:visibility="visible" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible" />-->
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/image"
+                android:src="@drawable/location"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/appCompatEditTextLocation"
+                app:layout_constraintTop_toTopOf="@id/appCompatEditTextLocation"
+                app:layout_constraintStart_toStartOf="parent"/>
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/appCompatEditTextLocation"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
                 android:background="@drawable/bg_edit_text"
-                android:drawableStart="@drawable/location"
                 android:drawablePadding="40dp"
+                android:imeOptions="actionNext"
+                android:singleLine="true"
                 android:hint="Pick Up"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image"
+                app:layout_constraintTop_toBottomOf="@+id/llToolbarHome"
                 android:padding="15dp"
                 android:textAllCaps="false"
                 android:textColorHint="#CDCFD6"
-                android:textSize="14dp" />
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageDrops"
+                android:src="@drawable/drop"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/appCompatEditTextDropOff"
+                app:layout_constraintTop_toTopOf="@id/appCompatEditTextDropOff"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:id="@+id/imageline"
+                android:src="@drawable/line"
+                app:layout_constraintBottom_toTopOf="@+id/imageDrops"
+                android:layout_marginStart="25dp"
+                app:layout_constraintTop_toBottomOf="@id/image"
+                app:layout_constraintStart_toStartOf="parent"/>
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/appCompatEditTextDropOff"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
                 android:layout_marginEnd="15dp"
                 android:background="@drawable/bg_edit_text"
-                android:drawableStart="@drawable/drop"
                 android:drawablePadding="40dp"
                 android:hint="Drop Off"
                 android:padding="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageDrops"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatEditTextLocation"
                 android:textAllCaps="false"
                 android:textColorHint="#CDCFD6"
-                android:textSize="14dp" />
-            <!--<fragment
+                android:textSize="14sp" />
+           <!-- <fragment
                 android:id="@+id/map"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>-->
+                android:layout_weight="1"/>
 
 
+-->
 
-
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnNext"
             android:layout_width="200dp"
@@ -76,6 +169,26 @@
             android:layout_marginBottom="20dp"
             android:layout_gravity="bottom|center"
             android:textColor="@color/white"/>
+<!--
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinatorOnBoarding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:minHeight="@dimen/_400sdp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <include layout="@layout/bottom_sheet_looking" />
+
+            <include layout="@layout/bottom_sheet_confirm_ride" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+-->
+
+
     </FrameLayout>
 
 

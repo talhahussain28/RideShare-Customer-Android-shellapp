@@ -3,6 +3,7 @@ package com.herride.customer.rest
 import com.herride.customer.common.Constants
 import com.herride.customer.model.map_poliline.Result
 import com.herride.customer.preference.SessionManager
+import com.herride.customer.responsesNew.SignUpResponseNew
 import com.herride.customer.ui.home.driver_details.response.DriverDetailApiResponse
 import com.herride.customer.ui.home.faq.response.FaqListApiResponse
 import com.herride.customer.ui.home.faq.response.FaqSubListApiResponse
@@ -101,6 +102,8 @@ interface ApiService {
         const val accessible_id = "accessible_id"
         const val temperature = "temperature"
         const val help_category_id = "help_category_id"
+        const val city_id = "city_id"
+        const val state_id = "state_id"
     }
 
     @GET("/api/language/list")
@@ -169,7 +172,24 @@ interface ApiService {
             @Part profile_picture: MultipartBody.Part
     ): Observable<retrofit2.Response<SignInApiResponse>>
 
-
+    @Multipart
+    @POST("api/auth/sign-up")
+    fun signUpAPINew(
+      //  @Part(parameters.code) codes: RequestBody,
+        @Part(parameters.name) names: RequestBody,
+        @Part(parameters.email) emails: RequestBody,
+        @Part(parameters.mobile_country_code) mobile_country_codes: RequestBody,
+        @Part(parameters.mobile) mobiles: RequestBody,
+        @Part(parameters.password) password: RequestBody,
+        @Part(parameters.gender) genders: RequestBody,
+        @Part(parameters.city_id) city_id: RequestBody,
+        @Part(parameters.state_id) state_id: RequestBody,
+      //  @Part(parameters.player_id) player_id: RequestBody,
+      //  @Part(parameters.device_name) device_name: RequestBody,
+      //  @Part(parameters.device_type) device_type: RequestBody,
+        @Part(parameters.user_type) user_types: RequestBody
+        //@Part profile_picture: MultipartBody.Part
+    ): Observable<retrofit2.Response<SignUpResponseNew>>
     @FormUrlEncoded
     @POST("api/auth/sign-in")
     fun signInAPI(
