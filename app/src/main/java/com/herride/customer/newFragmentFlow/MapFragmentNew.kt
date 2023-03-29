@@ -158,6 +158,7 @@ class MapFragmentNew : BaseFragment(),
                 Log.e("Exception Here", "Exception Here")
             }
         }
+        //talha
         tvConfirmForOrder.setOnClickListener {
             Log.e("DGSdgsdsg", "tvConfirmForOrder - pickuplatlng ==>${pickupLat},${pickupLong}")
             Log.e("DGSdgsdsg", "tvConfirmForOrder - dropofflatlng==>${DropOffLat},${DropOffLong}")
