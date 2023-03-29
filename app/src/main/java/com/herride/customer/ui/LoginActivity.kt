@@ -2,9 +2,8 @@ package com.herride.customer.ui
 
 import android.os.Bundle
 import com.herride.customer.R
+import com.herride.customer.newFragmentFlow.RegisterFragment2
 import com.herride.customer.ui.base.BaseActivity
-import com.herride.customer.ui.signin_up.LoginFragment
-import com.herride.customer.ui.signin_up.RegisterFragment
 
 class LoginActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

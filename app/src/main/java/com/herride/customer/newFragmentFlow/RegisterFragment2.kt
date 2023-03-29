@@ -1,21 +1,19 @@
-package com.herride.customer.ui
+package com.herride.customer.newFragmentFlow
 
 import android.os.Bundle
 import android.util.Log
-import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import com.google.gson.Gson
 import com.herride.customer.R
 import com.herride.customer.common.CommonMethods
 import com.herride.customer.common.Constants
 import com.herride.customer.common.GlobalMethods
-import com.herride.customer.newFragmentFlow.LoginFragmentNew
+import com.herride.customer.model.States
 import com.herride.customer.responsesNew.SignUpResponseNew
 import com.herride.customer.ui.base.BaseFragment
 import com.herride.customer.utils.ImagePicker
@@ -30,16 +28,14 @@ import okhttp3.RequestBody
 import retrofit2.Response
 import java.io.File
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 /**
  * A simple [Fragment] subclass.
  * Use the [RegisterFragment.newInstance] factory method to
  * create an instance of this fragment.
+ *
  */
+private const val ARG_PARAM1 = "param1"
+private const val ARG_PARAM2 = "param2"
 class RegisterFragment2 : BaseFragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -68,8 +64,10 @@ class RegisterFragment2 : BaseFragment() {
 
     var picker: ImagePicker = ImagePicker(repo)
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_register2, container, false)
     }
@@ -88,6 +86,9 @@ class RegisterFragment2 : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         setUsPhoneNumberFormater()
 
+        setStatesSpinnerAdapter()
+        setCitySpinnerAdapter()
+
         btnNext.setOnClickListener {
             //isCheckboxRegisterChecked = checkboxRegister.isChecked
             fullName = full_name.text.toString()
@@ -101,9 +102,9 @@ class RegisterFragment2 : BaseFragment() {
             mobileNumber = mobileNumber.replace(" ", "")
             mobileNumber = mobileNumber.replace("-", "")
 
-           // mobileCountryCode = ccpRegister.selectedCountryCodeWithPlus
+            // mobileCountryCode = ccpRegister.selectedCountryCodeWithPlus
             //MTH
-     /*       if (selectedImageFile == null) {
+            /*       if (selectedImageFile == null) {
                 msgDialog("Please select profile picture")
             } else if (fullName.isNullOrEmpty()) {
                 msgDialog("Please enter full name")
@@ -131,30 +132,35 @@ class RegisterFragment2 : BaseFragment() {
         }
         terms_conditions.setOnClickListener {
 //            replaceFragment(WebViewFragment.newInstance("${Constants.TERMS_CONDITIONS}",""), true, false, containerViewId = R.id.login_container)
-            replaceFragment(WebViewFragment.newInstance("${Constants.TERMS_CONDITIONS}", ""), true, false)
+            replaceFragment(
+                WebViewFragment.newInstance("${Constants.TERMS_CONDITIONS}", ""),
+                true,
+                false
+            )
         }
         signInTV.setOnClickListener {
-         //   replaceFragment(LoginFragment(), false, true, containerViewId = R.id.main_content_login)
-            replaceFragment(LoginFragmentNew(), false,true,R.id.login_container)
+            //   replaceFragment(LoginFragment(), false, true, containerViewId = R.id.main_content_login)
+            replaceFragment(LoginFragmentNew(), false, true, R.id.login_container)
         }
 
-        stateList = spinnerGenderData()
+       /* stateList = spinnerGenderData()
 
-        var spinnerGenderAdapter = ArrayAdapter(baseActivity!!, R.layout.spinner_dropdown_item, stateList)
+        var spinnerGenderAdapter =
+            ArrayAdapter(baseActivity!!, R.layout.spinner_dropdown_item, stateList)
         spinnerGender.adapter = spinnerGenderAdapter
+*/
 
+        /*spinnerStates.setOnClickListener {
+            setStatesSpinnerAdapter()
+        }*/
 
-        flGender.setOnClickListener {
-            isSpinnerClick = true
-            spinnerGender.performClick()
-        }
-
-     /*   imgvBackReg.setOnClickListener {
+        /*   imgvBackReg.setOnClickListener {
 
             baseActivity!!.onBackPressed()
         }*/
 
-        spinnerGender.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+/*
+        spinnerStates.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 Log.e("TAG", "Country-> onNothingSelected")
             }
@@ -180,6 +186,7 @@ class RegisterFragment2 : BaseFragment() {
             }
         }
 
+*/
 
         cardViewImageSelection.setOnClickListener {
             if (picker.isAdded) {
@@ -192,7 +199,7 @@ class RegisterFragment2 : BaseFragment() {
                 isCheckboxRegisterChecked = false
                 //checkboxRegister.setImageResource(R.drawable.ic_unchecked_checkbox)
             } else {
-               // checkboxRegister.setImageResource(R.drawable.ic_checked_checkbox)
+                // checkboxRegister.setImageResource(R.drawable.ic_checked_checkbox)
                 isCheckboxRegisterChecked = true
 
             }
@@ -231,7 +238,7 @@ class RegisterFragment2 : BaseFragment() {
 
 
     var selectedImageFile: File? = null
-   /* fun emailMobileExistCheckApiCall() {
+    /* fun emailMobileExistCheckApiCall() {
 
         *//*var imageRequestBody: RequestBody =
                 RequestBody.create(MediaType.parse("multipart/form-data"), file)*//*
@@ -363,18 +370,30 @@ class RegisterFragment2 : BaseFragment() {
         phone_number.addTextChangedListener(CommonMethods.onTextChangedListener(phone_number));
     }
 
-    private fun sigup(){
+    private fun sigup() {
         var nameBody = RequestBody.create("multipart/form-data".toMediaTypeOrNull(), fullName)
         var emailBody = RequestBody.create("multipart/form-data".toMediaTypeOrNull(), email)
         var mobileBody = RequestBody.create("multipart/form-data".toMediaTypeOrNull(), mobileNumber)
         var passwordBody = RequestBody.create("multipart/form-data".toMediaTypeOrNull(), password)
-        var countrycodeBody = RequestBody.create("multipart/form-data".toMediaTypeOrNull(), mobileCountryCode)
-        var userTypeBody = RequestBody.create("multipart/form-data".toMediaTypeOrNull(), Constants.customer)
+        var countrycodeBody =
+            RequestBody.create("multipart/form-data".toMediaTypeOrNull(), mobileCountryCode)
+        var userTypeBody =
+            RequestBody.create("multipart/form-data".toMediaTypeOrNull(), Constants.customer)
         var genderBody = RequestBody.create("multipart/form-data".toMediaTypeOrNull(), "male")
         var stateBody = RequestBody.create("multipart/form-data".toMediaTypeOrNull(), "Sindh")
         var cityBody = RequestBody.create("multipart/form-data".toMediaTypeOrNull(), "Karachi")
 
-        repo.api.signUpAPINew(nameBody,emailBody,countrycodeBody,mobileBody,passwordBody,genderBody,cityBody,stateBody,userTypeBody)
+        repo.api.signUpAPINew(
+            nameBody,
+            emailBody,
+            countrycodeBody,
+            mobileBody,
+            passwordBody,
+            genderBody,
+            cityBody,
+            stateBody,
+            userTypeBody
+        )
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : Observer<Response<SignUpResponseNew>> {
@@ -391,8 +410,8 @@ class RegisterFragment2 : BaseFragment() {
                 }
 
                 override fun onNext(response: Response<SignUpResponseNew>) {
-                    if (response.isSuccessful){
-                        if (response.code() == 200){
+                    if (response.isSuccessful) {
+                        if (response.code() == 200) {
                             Toast.makeText(context, "Succcess", Toast.LENGTH_SHORT).show()
                         }
                     }
@@ -413,7 +432,7 @@ class RegisterFragment2 : BaseFragment() {
         return arr
     }
 
-    /*fun getStates(): Set<String> {
+    fun getStates(): Set<String> {
         return getValue()?.data?.keys ?: setOf()
     }
 
@@ -424,11 +443,45 @@ class RegisterFragment2 : BaseFragment() {
     }
 
     private fun getValue(): States? {
-        val inputStream = app.resources.openRawResource(R.raw.states_and_cities)
-        val jsonString = inputStream.bufferedReader().use { it.readText() }
+        val inputStream = context?.resources?.openRawResource(R.raw.states_and_cities)
+        val jsonString = inputStream?.bufferedReader().use { it?.readText() }
         val gson = Gson()
         return gson.fromJson(jsonString, States::class.java)
-        }
-    data class States(val data: Map<String, List<String>>)*/
+    }
 
+    private fun setStatesSpinnerAdapter() {
+        val states = getStates()
+        ArrayAdapter(
+            baseActivity!!, android.R.layout.simple_spinner_item, states.toTypedArray()
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spinnerStates.adapter = adapter
+
+            spinnerStates.onItemSelectedListener =
+                object : AdapterView.OnItemSelectedListener {
+                    override fun onItemSelected(
+                        parent: AdapterView<*>,
+                        view: View?,
+                        position: Int,
+                        id: Long
+                    ) {
+                        setCitySpinnerAdapter()
+                    }
+
+                    override fun onNothingSelected(parent: AdapterView<*>) {
+                    }
+                }
+        }
+    }
+
+    private fun setCitySpinnerAdapter() {
+        val state = spinnerStates.selectedItem.toString()
+        val cities = getCitiesByState(state)
+        val adapter = ArrayAdapter(
+            baseActivity!!, android.R.layout.simple_spinner_item, cities.toTypedArray()
+        )
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerCity.adapter = adapter
+
+    }
 }

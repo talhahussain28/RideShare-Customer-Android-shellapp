@@ -247,11 +247,58 @@
                 android:layout_weight="1"
                 app:cardBackgroundColor="#FAFAFA"
                 app:cardCornerRadius="15dp"
+                app:cardElevation="0dp">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinnerStates"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cityCardView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="#FAFAFA"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp">
+
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinnerCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+        <!--<LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/phone_number"
+            app:layout_constraintStart_toStartOf="@+id/phone_number"
+            app:layout_constraintTop_toBottomOf="@+id/phone_number">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="#FAFAFA"
+                app:cardCornerRadius="15dp"
                 app:cardElevation="0dp"
                 app:layout_constraintEnd_toStartOf="@+id/cityCardView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/phone_number">
-                <!--
+                &lt;!&ndash;
 
                                 <androidx.appcompat.widget.AppCompatTextView
                                     android:layout_width="wrap_content"
@@ -270,7 +317,7 @@
                                     android:layout_marginEnd="10dp"
                                     android:src="@drawable/arrow_down"
                                     app:layout_constraintBottom_toBottomOf="parent" />
-                -->
+                &ndash;&gt;
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -320,12 +367,12 @@
                             android:textColor="#CDCFD6" />
                     </FrameLayout>
 
-                    <!--  <View
+                    &lt;!&ndash;  <View
                           android:layout_width="match_parent"
                           android:layout_height="1dp"
                           android:layout_marginTop="@dimen/_10sdp"
                           android:alpha="20"
-                          android:background="@color/gray" />-->
+                          android:background="@color/gray" />&ndash;&gt;
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -342,7 +389,7 @@
                 app:layout_constraintStart_toEndOf="@+id/stateCardView"
                 app:layout_constraintTop_toBottomOf="@id/phone_number">
 
-                <!--<androidx.appcompat.widget.AppCompatTextView
+                &lt;!&ndash;<androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="15dp"
@@ -360,7 +407,7 @@
                     android:src="@drawable/arrow_down"
                     app:layout_constraintBottom_toBottomOf="parent" />
 
--->
+&ndash;&gt;
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -409,16 +456,16 @@
                             android:textColor="#CDCFD6" />
                     </FrameLayout>
 
-                    <!--  <View
+                    &lt;!&ndash;  <View
                           android:layout_width="match_parent"
                           android:layout_height="1dp"
                           android:layout_marginTop="@dimen/_10sdp"
                           android:alpha="20"
-                          android:background="@color/gray" />-->
+                          android:background="@color/gray" />&ndash;&gt;
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-        </LinearLayout>
+        </LinearLayout>-->
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/appCompatCheckBox2"

@@ -6,7 +6,8 @@ object Constants {
 
 //    const val baseURL = "http://api.acargolb.crypticpoint.com/"
 //    const val baseURL = "http://api.justherrideshare.crypticpoint.com/api/"
-    const val baseURL = "http://api.justherrideshare.crypticpoint.com/"
+    //const val baseURL = "http://api.justherrideshare.crypticpoint.com/"
+    const val baseURL = "http://54.157.133.185:3000/"
     const val android = "android"
 
     const val access_token =
