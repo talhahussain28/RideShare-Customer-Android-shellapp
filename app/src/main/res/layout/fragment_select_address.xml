@@ -6,7 +6,7 @@
     android:background="@color/whiteEAEAEA"
     android:clickable="true"
     android:orientation="vertical"
-    tools:context="com.herride.customer.ui.home.address.SelectAddressFragment">
+    tools:context="com.carty.riderapp.ui.home.address.SelectAddressFragment">
 
     <include
         android:id="@+id/llToolbar"

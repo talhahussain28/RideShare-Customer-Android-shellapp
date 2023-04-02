@@ -2,7 +2,7 @@
 <paths>
 <!--    <external-files-path name="my_images" path="/" />-->
 <!--    <external-files-path name="external_files" path="/" />-->
-    <external-path name="external_files"  path="Android/data/com.herride.task/files/Pictures" />
+    <external-path name="external_files"  path="Android/data/com.carty.task/files/Pictures" />
 
     <external-cache-path
         name="cache"

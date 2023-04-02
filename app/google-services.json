@@ -1,40 +1,41 @@
 {
   "project_info": {
-    "project_number": "855307865917",
-    "project_id": "justherrideshare-cc4c8",
-    "storage_bucket": "justherrideshare-cc4c8.appspot.com"
+    "project_number": "165975365615",
+    "firebase_url": "https://carty-b91a6-default-rtdb.firebaseio.com",
+    "project_id": "carty-b91a6",
+    "storage_bucket": "carty-b91a6.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:855307865917:android:b808e981050482cfee7f54",
+        "mobilesdk_app_id": "1:165975365615:android:46df47a0412ee31b03c81a",
         "android_client_info": {
-          "package_name": "com.herride.customer"
+          "package_name": "com.carty.driverapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "855307865917-68v1gr8blck8roj68ec4qv8l7gch6nrf.apps.googleusercontent.com",
+          "client_id": "165975365615-e3gvtpq37s4ckr4k89htrpm78fhai72o.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBynjfxNe423WDyHpPwzSDf8tVKqRPNvZU"
+          "current_key": "AIzaSyAF68GAqUwbP9cFkVkLaQjwY82uApIuRaE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "855307865917-68v1gr8blck8roj68ec4qv8l7gch6nrf.apps.googleusercontent.com",
+              "client_id": "165975365615-e3gvtpq37s4ckr4k89htrpm78fhai72o.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "855307865917-6ko9rhc9cm266c6a5p3v4iq8aadhmu3c.apps.googleusercontent.com",
+              "client_id": "165975365615-36qpb8kq5a5vbknhaufj93vfbnp0rmei.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.herride.driver"
+                "bundle_id": "com.carty.driverapp"
               }
             }
           ]
@@ -43,34 +44,34 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:855307865917:android:acebae438a566b71ee7f54",
+        "mobilesdk_app_id": "1:165975365615:android:32b94293cbb9411903c81a",
         "android_client_info": {
-          "package_name": "com.herride.driver"
+          "package_name": "com.carty.riderapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "855307865917-68v1gr8blck8roj68ec4qv8l7gch6nrf.apps.googleusercontent.com",
+          "client_id": "165975365615-e3gvtpq37s4ckr4k89htrpm78fhai72o.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBynjfxNe423WDyHpPwzSDf8tVKqRPNvZU"
+          "current_key": "AIzaSyAF68GAqUwbP9cFkVkLaQjwY82uApIuRaE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "855307865917-68v1gr8blck8roj68ec4qv8l7gch6nrf.apps.googleusercontent.com",
+              "client_id": "165975365615-e3gvtpq37s4ckr4k89htrpm78fhai72o.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "855307865917-6ko9rhc9cm266c6a5p3v4iq8aadhmu3c.apps.googleusercontent.com",
+              "client_id": "165975365615-36qpb8kq5a5vbknhaufj93vfbnp0rmei.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.herride.driver"
+                "bundle_id": "com.carty.driverapp"
               }
             }
           ]

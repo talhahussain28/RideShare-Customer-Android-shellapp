@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:clickable="true"
     android:background="@drawable/imgv_background_small"
-    tools:context="com.herride.customer.ui.signin_up.PhoneVerifyFragment">
+    tools:context="com.carty.riderapp.ui.signin_up.PhoneVerifyFragment">
     <FrameLayout
         android:id="@+id/flTopLayout"
         android:layout_width="match_parent"

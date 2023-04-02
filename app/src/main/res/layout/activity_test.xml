@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.herride.customer.ui.component.testpage.TestActivity">
+    tools:context="com.carty.riderapp.ui.component.testpage.TestActivity">
 
     <TextView
         android:id="@+id/txttestmodel"

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:clickable="true"
     android:orientation="vertical"
-    tools:context="com.herride.customer.ui.home.HomeFragment">
+    tools:context="com.carty.riderapp.ui.home.HomeFragment">
 
     <FrameLayout
         android:layout_width="match_parent"

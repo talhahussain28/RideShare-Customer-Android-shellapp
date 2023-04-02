@@ -81,7 +81,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.herride.customer.ui.widgets.NDSpinner
+                        <com.carty.riderapp.ui.widgets.NDSpinner
                             android:id="@+id/spinnerMode"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
@@ -292,7 +292,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.herride.customer.ui.widgets.NDSpinner
+                        <com.carty.riderapp.ui.widgets.NDSpinner
                             android:id="@+id/spinnerMusic"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
@@ -366,7 +366,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.herride.customer.ui.widgets.NDSpinner
+                        <com.carty.riderapp.ui.widgets.NDSpinner
                             android:id="@+id/spinnerAccessible"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"

@@ -6,7 +6,7 @@
     android:clickable="true"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context="com.herride.customer.ui.home.order_place.OrderPlaceFragment">
+    tools:context="com.carty.riderapp.ui.home.order_place.OrderPlaceFragment">
 
     <include
         layout="@layout/normal_toolbar"

@@ -5,7 +5,7 @@
     android:background="@color/white"
     android:clickable="true"
     android:orientation="vertical"
-    tools:context="com.herride.customer.ui.home.setting.SettingFragment">
+    tools:context="com.carty.riderapp.ui.home.setting.SettingFragment">
 
     <include
         android:id="@+id/llToolbar"

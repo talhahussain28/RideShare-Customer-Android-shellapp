@@ -6,7 +6,7 @@
     android:background="@color/background_color"
     android:orientation="vertical"
     android:clickable="true"
-    tools:context="com.herride.customer.ui.home.payment_card_setting.PaymentSettingFragment">
+    tools:context="com.carty.riderapp.ui.home.payment_card_setting.PaymentSettingFragment">
 
     <include layout="@layout/normal_toolbar" />
 

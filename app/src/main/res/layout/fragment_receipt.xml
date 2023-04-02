@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:clickable="true"
     android:background="@color/background_color"
-    tools:context="com.herride.customer.ui.home.ReceiptFragment">
+    tools:context="com.carty.riderapp.ui.home.ReceiptFragment">
 
 
     <FrameLayout

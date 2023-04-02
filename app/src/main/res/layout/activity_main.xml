@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:background="@color/white"
     android:clickable="true"
-    tools:context="com.herride.customer.ui.MainActivity">
+    tools:context="com.carty.riderapp.ui.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -6,7 +6,7 @@
     android:background="@color/whiteEAEAEA"
     android:clickable="true"
     android:orientation="vertical"
-    tools:context="com.herride.customer.ui.home.ProfileFragment">
+    tools:context="com.carty.riderapp.ui.home.ProfileFragment">
 
     <include
         android:id="@+id/llToolbar"
@@ -246,7 +246,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="@dimen/_5sdp">
 
-                    <com.herride.customer.ui.widgets.NDSpinner
+                    <com.carty.riderapp.ui.widgets.NDSpinner
                         android:id="@+id/spinnerGender"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"

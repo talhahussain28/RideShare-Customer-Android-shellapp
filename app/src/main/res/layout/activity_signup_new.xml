@@ -261,7 +261,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.herride.customer.ui.widgets.NDSpinner
+                        <com.carty.riderapp.ui.widgets.NDSpinner
                             android:id="@+id/spinnerGender"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
@@ -350,7 +350,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.herride.customer.ui.widgets.NDSpinner
+                        <com.carty.riderapp.ui.widgets.NDSpinner
                             android:id="@+id/spinnerCity"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"

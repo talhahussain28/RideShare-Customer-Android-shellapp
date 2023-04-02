@@ -6,7 +6,7 @@
     android:background="@color/colorPrimary"
     android:clickable="true"
     android:orientation="vertical"
-    tools:context="com.herride.customer.ui.home.ProfileFragment">
+    tools:context="com.carty.riderapp.ui.home.ProfileFragment">
 
     <include
         android:id="@+id/llToolbar"
