@@ -4,6 +4,60 @@ package com.carty.riderapp.ui.home.order_place.model
 import com.google.gson.annotations.SerializedName
 import androidx.annotation.Keep
 
+
+/*@Keep
+data class BookOrderRequest(
+       *//* @SerializedName("code")
+        var code: String = "",*//*
+        @SerializedName("customer_id")
+        var customer_id: String = "",
+        @SerializedName("card_id")
+        var card_id: String = "",
+        *//*@SerializedName("vehicle_id")
+        var vehicle_id: String = "",*//*
+        @SerializedName("start_address")
+        var start_address: String = "",
+        @SerializedName("start_latitude")
+        var start_latitude: Number = 0,
+        @SerializedName("start_longitude")
+        var start_longitude: Number = 0,
+        @SerializedName("finish_address")
+        var finish_address: String = "",
+        @SerializedName("finish_latitude")
+        var finish_latitude: Number = 0,
+        @SerializedName("finish_longitude")
+        var finish_longitude: Number = 0
+) {*/
+/*
+        @Keep
+        data class preferences(
+                @SerializedName("accessible_id")
+                var accessible_id: String = "",
+                @SerializedName("mode_id")
+                var mode_id: String = "",
+                @SerializedName("music_id")
+                var music_id: String = "",
+                @SerializedName("temperature")
+                var temperature: Number = 0
+        )
+
+        data class FareInfo(
+                @SerializedName("base_fare")
+                var baseFare: Number = 0,
+                @SerializedName("distance_fare")
+                var distanceFare: Number = 0,
+                @SerializedName("duration_fare")
+                var durationFare: Number = 0
+        )
+*/
+
+
+
+
+
+
+///////////////////////////////////////
+//MTH/////////
 @Keep
 data class BookOrderRequest(
         @SerializedName("code")

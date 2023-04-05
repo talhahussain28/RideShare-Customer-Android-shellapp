@@ -2,6 +2,7 @@ package com.carty.riderapp.newFragmentFlow
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,10 +10,14 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.carty.riderapp.R
+import com.carty.riderapp.common.Constants
 import com.carty.riderapp.responsesNew.LoginApiResponse
 import com.carty.riderapp.rest.ApiService
 import com.carty.riderapp.ui.base.BaseFragment
+import com.carty.riderapp.ui.home.HomeFragment
+import com.carty.riderapp.ui.home.response.FirebaseUserData
 import com.carty.riderapp.utils.Permission_Runtime
+import com.google.firebase.database.FirebaseDatabase
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -208,6 +213,9 @@ class LoginFragmentNew : BaseFragment() {
                         if (response.code() == 200) {
                             Toast.makeText(context, "ok  ", Toast.LENGTH_SHORT).show()
                             if (response.body() != null) {
+                                repo.pref.isUserLogin = true
+                                repo.pref.USER_ID = response.body()!!.payload.customer_id
+                                replaceFragment(MapFragmentNew(), false, true,R.id.login_container)
                                 Toast.makeText(context, "success", Toast.LENGTH_SHORT).show()
                             }
                         }
@@ -315,6 +323,28 @@ class LoginFragmentNew : BaseFragment() {
 ////
 ////        })
 //    }
+
+   /* private fun setFirebaseData() {
+        val database = FirebaseDatabase.getInstance().reference
+        val deviceId =
+            Settings.Secure.getString(baseActivity!!.contentResolver, Settings.Secure.ANDROID_ID)
+        repo.pref.deviceId = deviceId
+        val fbUserData = FirebaseUserData(
+            deviceId,
+            Constants.android,
+            "${repo.pref.availability_status}"
+        )
+
+        //OneSignal.setSubscription(true)
+
+        database.child("${Constants.devices}/${Constants.devices_Cusomer}")
+            .child(repo.pref.USER_ID)
+            .setValue(fbUserData)
+
+        baseActivity!!.userSessionListener()
+
+        replaceFragment(HomeFragment(), false, true)
+    }*/
 
 
 }

@@ -13,7 +13,7 @@ data class Payload(
     val name: String,
     val email: String,
     val mobile_country_code: Int,
-    val mobile: Int,
+    val mobile: String,
     val profile_picture: String,
     val gender: String,
     val state_id: String,

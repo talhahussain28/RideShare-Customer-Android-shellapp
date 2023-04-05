@@ -104,7 +104,7 @@ class SelectAddressFragment : BaseFragment(),
         Log.e("Select Address", "Select Address Frag")
         //imgv_ClearAddress.visibility = View.INVISIBLE
 
-        getDeleteAddressAPICall(Constants.get, Constants.none)
+        //getDeleteAddressAPICall(Constants.get, Constants.none)
 
         edtSearchAddress.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -140,17 +140,18 @@ class SelectAddressFragment : BaseFragment(),
             edtSearchAddress.setText("")
             locationSelection_recyclerView.visibility = View.GONE
         }
-
-        imgAddHomeDelete.setOnClickListener {
+//MTH
+      /*  imgAddHomeDelete.setOnClickListener {
             getDeleteAddressAPICall(Constants.delete, Constants.home)
 //            tvAddHome.text = ""
 //            tvAddHome.visibility = View.GONE
 //            imgAddHomeDelete.visibility = View.GONE
-        }
+        }*/
 
-        imgAddWorkDelete.setOnClickListener {
+        //MTH
+        /*imgAddWorkDelete.setOnClickListener {
             getDeleteAddressAPICall(Constants.delete, Constants.work)
-        }
+        }*/
 
         llOther.setOnClickListener {
 /*            if (tvAddWorkSetting.text.toString().isNullOrEmpty()) {
@@ -404,7 +405,10 @@ class SelectAddressFragment : BaseFragment(),
     var addressListAdapter: AddressListAdapter? = null
     var addressList = arrayListOf<AddressGetAddDeleteApiResponse.Payload>()
 
-    fun getDeleteAddressAPICall(actionType: String, address_type: String) {
+
+    //MTH
+
+   /* fun getDeleteAddressAPICall(actionType: String, address_type: String) {
 
         addressListAdapter = AddressListAdapter(repo, arrayListOf())
         recyclerAddressViewSelect.adapter = addressListAdapter
@@ -478,7 +482,7 @@ class SelectAddressFragment : BaseFragment(),
                     }
 
                 })
-    }
+    }*/
 
 
     var pickupLat = ""

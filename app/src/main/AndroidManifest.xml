@@ -32,6 +32,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name="com.carty.riderapp.ui.newFlow.SplashActivityNew"
+            android:exported="false" />
+        <activity
             android:name="com.carty.riderapp.ui.newFlow.TermsActivity"
             android:exported="false" />
         <activity
@@ -88,7 +91,7 @@
         -->
         <!-- <activity android:name="com.justherrideshare.customer.ui.LoginActivity" android:screenOrientation="portrait"></activity> -->
         <activity
-            android:name="com.carty.riderapp.ui.newFlow.SplashActivityNew"
+            android:name="com.carty.riderapp.newFragmentFlow.LaunchingActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

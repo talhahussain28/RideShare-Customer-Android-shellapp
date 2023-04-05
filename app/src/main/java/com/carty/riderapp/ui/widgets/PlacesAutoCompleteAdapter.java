@@ -47,7 +47,7 @@ import java.util.concurrent.TimeoutException;
 public class PlacesAutoCompleteAdapter extends RecyclerView.Adapter<PlacesAutoCompleteAdapter.PredictionHolder> implements Filterable {
     private static final String TAG = "PlacesAutoAdapter";
     private static final String TAG2 = "getedAddress";
-    private final LocationSelectionType mLocationType;
+    private LocationSelectionType mLocationType;
     private TypeFilter mTypeFilter = null;
     private String mCountryCode = "";
     private ArrayList<PlaceAutocomplete> mResultList = new ArrayList<>();
@@ -71,7 +71,12 @@ public class PlacesAutoCompleteAdapter extends RecyclerView.Adapter<PlacesAutoCo
         placesClient = com.google.android.libraries.places.api.Places.createClient(context);
         mLocationType = locationSelectionType;
     }
-
+    public PlacesAutoCompleteAdapter(Context context) {
+        mContext = context;
+        STYLE_BOLD = new StyleSpan(Typeface.BOLD);
+        STYLE_NORMAL = new StyleSpan(Typeface.NORMAL);
+        placesClient = com.google.android.libraries.places.api.Places.createClient(context);
+    }
     public PlacesAutoCompleteAdapter(Context context, LocationSelectionType locationSelectionType, TypeFilter typeFilter, String countryCode) {
         mContext = context;
         STYLE_BOLD = new StyleSpan(Typeface.BOLD);

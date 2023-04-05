@@ -3,6 +3,7 @@ package com.carty.riderapp.rest
 import com.carty.riderapp.common.Constants
 import com.carty.riderapp.model.map_poliline.Result
 import com.carty.riderapp.preference.SessionManager
+import com.carty.riderapp.responsesNew.BookRide
 import com.carty.riderapp.responsesNew.LoginApiResponse
 import com.carty.riderapp.responsesNew.SignUpResponseNew
 import com.carty.riderapp.ui.home.driver_details.response.DriverDetailApiResponse
@@ -193,6 +194,7 @@ interface ApiService {
         @Part(parameters.user_type) user_types: RequestBody
         //@Part profile_picture: MultipartBody.Part
     ): Observable<retrofit2.Response<SignUpResponseNew>>
+
     /* @Multipart
      @POST("api/auth/sign-up")
      fun signUpAPINew(
@@ -433,7 +435,10 @@ interface ApiService {
     fun bookTripByModelAPI(
         @Body postTripModel: BookOrderRequest
     ): Observable<retrofit2.Response<BookTripApiResponse>>
-
+    @POST("api/trip/book")
+    fun bookRideAPI(
+        @Body postTripModel: BookRide
+    ): Observable<retrofit2.Response<BookTripApiResponse>>
 
     @FormUrlEncoded
     @POST("api/trip/book")

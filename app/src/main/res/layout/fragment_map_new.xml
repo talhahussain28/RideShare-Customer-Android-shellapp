@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clickable="true"
     android:background="@color/white"
+    android:clickable="true"
     android:orientation="vertical">
 
     <FrameLayout
@@ -16,10 +16,11 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/llToolbarHome"
                 android:layout_width="0dp"
-                android:layout_height="130dp"
+                android:layout_height="90dp"
                 android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -81,14 +82,14 @@
                     android:visibility="visible" />-->
 
             <ImageView
+                android:id="@+id/image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/image"
-                android:src="@drawable/location"
                 android:layout_marginStart="20dp"
+                android:src="@drawable/location"
                 app:layout_constraintBottom_toBottomOf="@+id/appCompatEditTextLocation"
-                app:layout_constraintTop_toTopOf="@id/appCompatEditTextLocation"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/appCompatEditTextLocation" />
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/appCompatEditTextLocation"
@@ -98,65 +99,82 @@
                 android:layout_marginEnd="15dp"
                 android:background="@drawable/bg_edit_text"
                 android:drawablePadding="40dp"
-                android:imeOptions="actionNext"
-                android:singleLine="true"
                 android:hint="Pick Up"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/image"
-                app:layout_constraintTop_toBottomOf="@+id/llToolbarHome"
+                android:imeOptions="actionNext"
                 android:padding="15dp"
+                android:singleLine="true"
                 android:textAllCaps="false"
                 android:textColorHint="#CDCFD6"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image"
+                app:layout_constraintTop_toBottomOf="@+id/llToolbarHome" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/places_recycler_view"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="#FFF"
+                android:visibility="gone"
+                android:translationZ="50dp"
+                android:orientation="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatEditTextLocation"/>
 
             <ImageView
+                android:id="@+id/imageDrops"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageDrops"
-                android:src="@drawable/drop"
                 android:layout_marginStart="20dp"
+                android:src="@drawable/drop"
                 app:layout_constraintBottom_toBottomOf="@+id/appCompatEditTextDropOff"
-                app:layout_constraintTop_toTopOf="@id/appCompatEditTextDropOff"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/appCompatEditTextDropOff" />
+
             <ImageView
+                android:id="@+id/imageline"
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
-                android:id="@+id/imageline"
+                android:layout_marginStart="25dp"
                 android:src="@drawable/line"
                 app:layout_constraintBottom_toTopOf="@+id/imageDrops"
-                android:layout_marginStart="25dp"
-                app:layout_constraintTop_toBottomOf="@id/image"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image" />
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/appCompatEditTextDropOff"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
-                android:imeOptions="actionDone"
-                android:singleLine="true"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="15dp"
                 android:background="@drawable/bg_edit_text"
                 android:drawablePadding="40dp"
                 android:hint="Drop Off"
+                android:clickable="true"
                 android:padding="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageDrops"
-                app:layout_constraintTop_toBottomOf="@+id/appCompatEditTextLocation"
+                android:singleLine="true"
                 android:textAllCaps="false"
                 android:textColorHint="#CDCFD6"
-                android:textSize="14sp" />
-            <!-- <fragment
-                 android:id="@+id/map"
-                 android:name="com.google.android.gms.maps.SupportMapFragment"
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent"
-                 android:layout_weight="1"/>
-
-
- -->
-
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageDrops"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatEditTextLocation" />
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatEditTextDropOff"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_weight="1"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -170,16 +188,17 @@
             android:layout_marginEnd="@dimen/_20sdp"
             android:layout_marginBottom="@dimen/_70sdp"
             android:src="@drawable/ic_locate_me" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnNext"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/btn_bg"
             android:text="Next"
             android:textAllCaps="false"
-            android:layout_marginBottom="20dp"
-            android:layout_gravity="bottom|center"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
         <!--
 
                 <androidx.coordinatorlayout.widget.CoordinatorLayout

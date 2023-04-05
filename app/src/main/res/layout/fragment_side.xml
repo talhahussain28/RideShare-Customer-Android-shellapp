@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/home_background">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        app:layout_constraintTop_toBottomOf="@+id/rideNow"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/view_20x"
+        android:layout_marginTop="@dimen/view_5x"
+        android:orientation="vertical">
+
+        <!-- <LinearLayout
+             android:id="@+id/map"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center_vertical"
+             android:padding="16dp">
+
+             <ImageView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginEnd="15dp"
+                 android:src="@drawable/map_sett" />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Map"
+                 android:textColor="@color/black"
+                 android:textSize="16sp" />
+
+         </LinearLayout>-->
+
+        <LinearLayout
+            android:id="@+id/Payment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/payment_svg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment Settings"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/email" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate the ride"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/trip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/trip" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trip"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/support"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/suppot_svg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Support"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/faq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/faq_svg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FAQ"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/setting" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/preference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/email" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Preference"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/logout" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log Out"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+
+        <!-- Add more LinearLayouts for the other items in the list -->
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/ic_cloud"
+        app:layout_constraintBottom_toBottomOf="@+id/ratting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/appCompatTextView2" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/imageLayout"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="60dp"
+        app:cardBackgroundColor="#433AFC"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewUserImage"
+                tools:ignore="ImageContrastCheck"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="1.5dp"
+                android:layout_marginTop="1.5dp"
+                android:layout_marginEnd="1.5dp"
+                android:layout_marginBottom="1.5dp"
+                android:src="@drawable/boy" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Sophia Calzoni"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/imageLayout"
+        app:layout_constraintTop_toTopOf="@+id/imageLayout" />
+
+
+    <TextView
+        android:id="@+id/ratting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="seatle Washington"
+        app:layout_constraintBottom_toBottomOf="@+id/imageLayout"
+        app:layout_constraintStart_toStartOf="@+id/appCompatTextView2"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/rideNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/view_6x"
+        android:layout_marginBottom="@dimen/view_6x"
+        android:background="@drawable/radius_background_ride"
+        android:paddingStart="@dimen/view_4x"
+        android:paddingTop="@dimen/view_2x"
+        android:paddingEnd="@dimen/view_4x"
+        android:paddingBottom="@dimen/view_2x"
+        android:text="Ride Now"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/imageLayout"
+        app:layout_constraintTop_toBottomOf="@+id/ratting"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

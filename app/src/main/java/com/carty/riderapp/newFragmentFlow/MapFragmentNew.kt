@@ -13,34 +13,43 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.text.Editable
 import android.text.TextUtils
+import android.text.TextWatcher
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.LinearInterpolator
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.google.android.gms.maps.*
-import com.google.android.gms.maps.model.*
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.firebase.database.*
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.carty.riderapp.R
 import com.carty.riderapp.common.*
 import com.carty.riderapp.model.map_poliline.Result
+import com.carty.riderapp.responsesNew.BookRide
 import com.carty.riderapp.rest.ApiService
 import com.carty.riderapp.ui.base.BaseFragment
-import com.carty.riderapp.ui.home.HomeFragment
 import com.carty.riderapp.ui.home.address.SelectAddressFragment
 import com.carty.riderapp.ui.home.driver_details.DriverDetailFragment
 import com.carty.riderapp.ui.home.model.TripStatusTracking
-import com.carty.riderapp.ui.home.notification.NotificationFragment
-import com.carty.riderapp.ui.home.order_place.OrderPlaceFragment
+import com.carty.riderapp.ui.home.order_place.model.BookOrderRequest
 import com.carty.riderapp.ui.home.order_place.model.DriverLocationModel
+import com.carty.riderapp.ui.home.order_place.response.BookTripApiResponse
+import com.carty.riderapp.ui.newFlow.FragmentBottomSheet
+import com.carty.riderapp.ui.widgets.PlacesAutoCompleteAdapter
+import com.google.android.gms.maps.*
+import com.google.android.gms.maps.model.*
+import com.google.android.libraries.places.api.Places
+import com.google.android.libraries.places.api.model.Place
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.firebase.database.*
+import com.google.gson.Gson
+import io.reactivex.Observer
 import io.reactivex.SingleObserver
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -48,7 +57,13 @@ import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.bottom_accept_job.view.*
 import kotlinx.android.synthetic.main.bottom_dropoff_job.view.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_home.imgvLocateMe
+import kotlinx.android.synthetic.main.fragment_map_new.*
+import kotlinx.android.synthetic.main.fragment_order_place.*
+import kotlinx.android.synthetic.main.fragment_select_address.*
 import kotlinx.android.synthetic.main.normal_toolbar.*
+import kotlinx.android.synthetic.main.normal_toolbar.imgIconBack
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -68,7 +83,7 @@ class MapFragmentNew : BaseFragment(),
     OnMapReadyCallback,
     GoogleMap.OnMapLoadedCallback,
     GoogleMap.OnCameraMoveListener,
-    GoogleMap.OnCameraIdleListener {
+    GoogleMap.OnCameraIdleListener/*,PlacesAutoCompleteAdapter.ClickListener*/ {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -76,13 +91,17 @@ class MapFragmentNew : BaseFragment(),
     companion object {
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
+            MapFragmentNew().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
                 }
             }
     }
+    private lateinit var myAutoPlaceAdapter: PlacesAutoCompleteAdapter
+    var bookorderModelRequest = BookRide()
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -96,6 +115,10 @@ class MapFragmentNew : BaseFragment(),
     var homeView: View? = null
     var edtpickup: TextView? =null
     var edtDropoff: TextView? =null
+    var confirmBtn: Button? =null
+    private var recyclerView: RecyclerView? = null
+    private var places : EditText?=null
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -103,6 +126,7 @@ class MapFragmentNew : BaseFragment(),
 
         edtpickup = homeView!!.findViewById(R.id.appCompatEditTextLocation)
         edtDropoff = homeView!!.findViewById(R.id.appCompatEditTextDropOff)
+        confirmBtn = homeView!!.findViewById(R.id.btnNext)
 
         val mapFragment = childFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
@@ -114,6 +138,21 @@ class MapFragmentNew : BaseFragment(),
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+       /* Places.initialize(baseActivity!!, resources.getString(R.string.map_key))
+
+        //Places.initialize(this, resources.getString(R.string.google_maps_key))
+        recyclerView = view.findViewById(R.id.places_recycler_view) as RecyclerView
+      //  places = view.findViewById(R.id.place_search)
+        edtpickup?.addTextChangedListener(filterTextWatcher)
+        myAutoPlaceAdapter = PlacesAutoCompleteAdapter(requireActivity())
+        recyclerView?.layoutManager = LinearLayoutManager(requireActivity())
+        myAutoPlaceAdapter.setClickListener(this)
+        recyclerView?.adapter = myAutoPlaceAdapter
+        myAutoPlaceAdapter.notifyDataSetChanged()*/
+
+
+
 
         edtpickup!!.isSingleLine = true
         edtpickup!!.ellipsize = TextUtils.TruncateAt.END
@@ -130,12 +169,14 @@ class MapFragmentNew : BaseFragment(),
                 setCustomerMarker("imgvLocateMe btn ", isSetMarker = true, isMapCler = false)
             }
         }
-
+        confirmBtn!!.setOnClickListener {
+            replaceFragment(PaymentCardAddFragment(), true, false,R.id.login_container)
+        }
         edtpickup!!.setOnClickListener {
             try {
                 var frag = SelectAddressFragment()
-                frag.setTargetFragment(this, Constants.ADDRESSPICKUP)
-                baseActivity!!.addFragment(frag, true)
+                frag.setTargetFragment(this@MapFragmentNew, Constants.ADDRESSPICKUP)
+                baseActivity!!.addFragment(frag, true,"pickUp",R.id.login_container)
             } catch (e: Exception) {
                 Log.e("Exception Here", "Exception Here")
             }
@@ -144,14 +185,15 @@ class MapFragmentNew : BaseFragment(),
             Log.e("CLicked Here", "CLicked Here")
             try {
                 var frag = SelectAddressFragment()
-                frag.setTargetFragment(this, Constants.ADDRESSDROPOFF)
-                baseActivity!!.addFragment(frag, true)
+                frag.setTargetFragment(this@MapFragmentNew, Constants.ADDRESSDROPOFF)
+                baseActivity!!.addFragment(frag, true,"dropOff",R.id.login_container)
             } catch (e: Exception) {
                 Log.e("Exception Here", "Exception Here")
             }
         }
+
         //talha
-        tvConfirmForOrder.setOnClickListener {
+       /* tvConfirmForOrder.setOnClickListener {
             Log.e("DGSdgsdsg", "tvConfirmForOrder - pickuplatlng ==>${pickupLat},${pickupLong}")
             Log.e("DGSdgsdsg", "tvConfirmForOrder - dropofflatlng==>${DropOffLat},${DropOffLong}")
             pickupAddress = edtpickup!!.text.toString()
@@ -200,19 +242,47 @@ class MapFragmentNew : BaseFragment(),
                 swipeAddress()
             }
         }
-
-        tcCancelWaitingTripHome.setOnClickListener {
+*/
+       /* tcCancelWaitingTripHome.setOnClickListener {
             dialogRejectJob()
 
-        }
+        }*/
 
        // getProfileAPICall(true)
 
-        ongoingJobFlow()
+     //   ongoingJobFlow()
 
     }
 
 
+    private val filterTextWatcher: TextWatcher = object : TextWatcher {
+        override fun afterTextChanged(s: Editable) {
+            if (s.toString() != "") {
+                myAutoPlaceAdapter.filter.filter(s.toString())
+                if (recyclerView?.visibility == View.GONE) {
+                    recyclerView?.visibility = View.VISIBLE
+                }
+            } else {
+                if (recyclerView?.visibility == View.VISIBLE) {
+                    recyclerView?.visibility = View.GONE
+                }
+            }
+        }
+
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+    }
+
+  /*  override fun click(place: Place) {
+
+        edtpickup?.text = place.address
+        recyclerView?.visibility = View.GONE
+        Toast.makeText(
+            requireContext(),
+            place.address + ", " + place.latLng!!.latitude + place.latLng!!.longitude,
+            Toast.LENGTH_SHORT
+        ).show()
+    }*/
     private fun swipeAddress() {
         var pickupAdds = edtpickup!!.text.toString()
         var pickupAddsLat = pickupLat
@@ -258,14 +328,14 @@ class MapFragmentNew : BaseFragment(),
          imgIconBack.setOnClickListener {  }*/
 
 
-        imgNotification.setOnClickListener {
+        /*imgNotification.setOnClickListener {
             replaceFragment(NotificationFragment(), true, false)
         }
 
         frNotification.visibility = View.VISIBLE
 
         imgNotification.setImageDrawable(ContextCompat.getDrawable(baseActivity!!, R.drawable.ic_notifications))
-        tvTitle.text = "Map"
+        tvTitle.text = "Map"*/
 
     }
 
@@ -350,13 +420,13 @@ class MapFragmentNew : BaseFragment(),
         if (mMap != null) {
 
             var curLatLng = LatLng(baseActivity!!.gpsTracker.latitude, baseActivity!!.gpsTracker.longitude)
-//            customerMarker = baseActivity!!.placeMarkerOnMapWithSize(mMap!!, customerMarker, curLatLng, R.drawable.ic_pin_home,
-//                    50, 35, baseActivity!!.cameraZoomLavel15_0_f)
-
+            customerMarker = baseActivity!!.placeMarkerOnMapWithSize(mMap!!, customerMarker, curLatLng, R.drawable.ic_pin_home,
+                    50, 35,true, baseActivity!!.cameraZoomLavel15_0_f)
+            setAddressFromLocations(curLatLng!!)
             //customerMarker.position = LatLng(baseActivity!!.gpsTracker.latitude, baseActivity!!.gpsTracker.longitude)
             // mMap!!.clear()
 
-
+           setCustomerMarker("onMapLoaded ", true,false)
             if (jobStatus.equals(Constants.PENDING, ignoreCase = true) ||
                 jobStatus.equals(Constants.none, ignoreCase = true)) {
                 setCustomerMarker("onMapLoaded ", false)
@@ -464,7 +534,7 @@ class MapFragmentNew : BaseFragment(),
     var isCameraIdle = false
     var isAddSelect = false
     private fun setAddressFromLocations(mCenterLatLong: LatLng) {
-        mCenterLatLong?.let {
+        mCenterLatLong.let {
             val address = getAddressByLatLongs(
                 baseActivity!!,
                 mCenterLatLong!!.latitude,
@@ -652,7 +722,7 @@ class MapFragmentNew : BaseFragment(),
                         Log.e("DGSdgsdsg", "routeList.size= ${routeList.size}")
 
                         var dur = routeList[0].legs[0].duration.text
-                        bsllAcceptJob.tvESTArrivalTime.text = "Driver will pick you up at ${dur}"
+                      //  bsllAcceptJob.tvESTArrivalTime.text = "Driver will pick you up at ${dur}"
 
                         for (route in routeList) {
                             val polyLine = route.getOverviewPolyline().getPoints()
@@ -1276,6 +1346,72 @@ class MapFragmentNew : BaseFragment(),
             }
         }
     }
+
+    private fun bookRequest() {
+        bookorderModelRequest.customer_id = "${repo.pref.USER_ID}"
+        bookorderModelRequest.card_id = "card_1MrQO8ApdrGIFjC7QZdOFn0q"
+        bookorderModelRequest.start_address = "${pickupAddress}"
+        bookorderModelRequest.start_latitude = "${pickupLat}".toDouble()
+        bookorderModelRequest.start_longitude = "${pickupLong}".toDouble()
+        bookorderModelRequest.finish_address = "${DropOffAddress}"
+        bookorderModelRequest.finish_latitude = "${DropOffLat}".toDouble()
+
+        bookTripApiCall(true)
+    }
+    val bottomSheet = FragmentBottomSheet()
+    private fun bookTripApiCall(isLoading: Boolean)
+    {
+        if (!baseActivity!!.isInternetAvailable(baseActivity!!.getString(R.string.INTERNET_CONNECTION_ISSUE))) {
+            return
+        }
+//        repo.api.bookTripByJsonAPI(bookingJson.toString())
+//        repo.api.bookTripByMapAPI(bookingDataMap)
+        repo.api.bookRideAPI(bookorderModelRequest)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : Observer<Response<BookTripApiResponse>> {
+                override fun onComplete() {
+
+                }
+
+                override fun onSubscribe(d: Disposable) {
+                    if (isLoading) {
+                        showLoading()
+                    }
+                  //  val bottomSheet = FragmentBottomSheet()
+                    bottomSheet.show(childFragmentManager,bottomSheet.tag)
+                }
+
+                override fun onNext(response: Response<BookTripApiResponse>) {
+                    hideLoading()
+                    bottomSheet.dismiss()
+
+                    if (response.isSuccessful) {
+                        if (response.code() == 200) {
+                            if (response.body() != null) {
+                                //msgDialog("Trip booked successfully")
+                                rlWaitingLayout.visibility = View.VISIBLE
+                                tripId = response.body()!!.payload.tripId
+                                newJobListener()
+//                                    baseActivity!!.onBackPressed()
+                            }
+                        }
+                    } else {
+                        baseActivity!!.showApiResponseERROR(response.errorBody())
+                    }
+
+                    //replaceFragment(PhoneVerifyFragment(), true, false, R.id.spalch_container)
+                }
+
+                override fun onError(e: Throwable) {
+                    hideLoading()
+                    Log.e("loginApiCall", "onError = ${e.localizedMessage}")
+                }
+
+            })
+    }
+
+
 
     /////---------------------------------------------------------------------------
   /*  fun getReceiptAPICall(isLoading: Boolean) {
